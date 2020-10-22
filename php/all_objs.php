@@ -1,5 +1,5 @@
 <?php
-  $path = 'img/';
+  $path = 'obj/';
   $files = scandir($path);
   foreach($files as $file) {
   if($file !== "." && $file !== "..") {
