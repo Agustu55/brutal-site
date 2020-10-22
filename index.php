@@ -1,6 +1,8 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>gus d stevens</title>
 
     <meta name="Keywords" content="photography, film, 35mm, analog, analogue">
@@ -20,7 +22,7 @@
     <!-- change the src on clicks -->
     <img onclick="randomImg()" id="hidden-content" width="100%" src="img/hrz1.jpg">
     <img onclick="randomImg()" id="content" width="100%" src="img/img1.jpg">
-    <div id="text"><a href="gallery.html">ENTER</a></div>
+    <div id="text"><a href="real.html">ENTER</a></div>
     <img onclick="randomImg()" id="logo" src="obj/obj1.png">
 
     <script type="text/javascript" src="js/loadRandomImg.js"></script>
