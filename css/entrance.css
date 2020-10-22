@@ -11,6 +11,10 @@ body {
 	letter-spacing:2px;
 }
 
+#preload {
+  display: none;
+}
+
 #content {
   position: absolute;
 	top: 50%;
