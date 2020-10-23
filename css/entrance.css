@@ -15,43 +15,101 @@ body {
   display: none;
 }
 
-#content {
-  position: absolute;
-	top: 50%;
-	left:50%;
-	margin-left: -255px;
-	margin-top:-400px;
-	text-align:center;
-	width: 500px;
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+	#content {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 80%;
+
+		/* centers the image horizontaly */
+		transform: translate(-50%, 0%);
+
+		/* put the top of the imagage where i want it verticallly */
+		margin-top: -59%;
+	}
+
+	#hidden-content {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 80%;
+
+		/* centers the image horizontaly */
+		transform: translate(-50%, 0%);
+
+		/* put the top of the imagage where i want it verticallly */
+		margin-top: 7%;
+	}
+
+
+	#logo {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 25%;
+	}
+
+	#text {
+		position: absolute;
+		top: 92%;
+		left:50%;
+		text-align:center;
+		transform: translate(-50%, -50%);
+	}
 }
 
-#hidden-content {
-  position: absolute;
-  top: 50%;
-  left:50%;
-  margin-left: -255px;
-  margin-top: 10px;
-  text-align:center;
-  width: 500px;
+/* Everything bigger than 600px */
+@media only screen and (min-width: 600px) {
+
+	#content {
+	  position: absolute;
+		top: 50%;
+		left:50%;
+		margin-left: -255px;
+		margin-top:-400px;
+		text-align:center;
+		width: 500px;
+	}
+
+	#hidden-content {
+	  position: absolute;
+	  top: 50%;
+	  left:50%;
+	  margin-left: -255px;
+	  margin-top: 10px;
+	  text-align:center;
+		width: 500px;
+	}
+
+
+	#logo {
+		left:50%;
+		position:absolute;
+		margin-left: -75px;
+		margin-top:-104px;
+		top: 50%;
+		float: center;
+	}
+
+	#text {
+		position: absolute;
+		top: 92%;
+		left:50%;
+		margin-left: -300px;
+		text-align:center;
+		width: 600px;
+	}
+
 }
 
 
-#logo {
-	left:50%;
-	position:absolute;
-	margin-left: -75px;
-	margin-top:-104px;
-	top: 50%;
-	float: center;
-}
-#text {
-	position: absolute;
-	top: 92%;
-	left:50%;
-	margin-left: -300px;
-	text-align:center;
-	width: 600px;
-}
+
+
 a:link {
 	text-decoration: none;
 	color: #FFF;

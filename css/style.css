@@ -57,10 +57,10 @@ a {
 
 .closeParagraph {
 	left:50%;
+  top: 50%;
 	position:absolute;
 	margin-left: -75px;
 	margin-top:-104px;
-	top: 50%;
 	float: center;
 }
 
