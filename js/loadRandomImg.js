@@ -41,6 +41,12 @@ function randomImg(){
    // to randomly change the background gradient
    var gradient = randomGradient();
    document.getElementById('square').style.background = "linear-gradient("+gradient[0] + "deg," + gradient[1] + "," + gradient[2] +")";
+   document.getElementById('square').style.background = "-moz-linear-gradient("+gradient[0] + "deg," + gradient[1] + "," + gradient[2] +")";
+   document.getElementById('square').style.background = "-webkit-linear-gradient("+gradient[0] + "deg," + gradient[1] + "," + gradient[2] +")";
+
+
+
+
    // this will add txt to the gradient for debugging -- just make sure to get rid of the angle
    // document.getElementById('square').style.background = "linear-gradient("+gradient[1] + "," + gradient[2] +")";
    // document.getElementById('hexText').innerHTML = String(gradient[1])+","+String(gradient[2]);
@@ -50,6 +56,8 @@ function randomImg(){
 document.getElementById('text').addEventListener("mouseover",function() {
   document.getElementById('text').style.backgroundColor = String(accent)
   document.getElementById('text').style.backgroundImage = "linear-gradient("+curr_gradient[0] + "deg," + curr_gradient[1] + "," + curr_gradient[2] +")";
+  document.getElementById('square').style.background = "-moz-linear-gradient("+curr_gradient[0] + "deg," + curr_gradient[1] + "," + curr_gradient[2] +")";
+  document.getElementById('square').style.background = "-webkit-linear-gradient("+curr_gradient[0] + "deg," + curr_gradient[1] + "," + curr_gradient[2] +")";
 });
 
 document.getElementById('text').addEventListener("mouseout",function() {

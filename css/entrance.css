@@ -51,6 +51,8 @@ body {
 		top: 50%;
 		left: 50%;
 		background: linear-gradient(#EE609C,#F5F588);
+		background: -webkit-linear-gradient(#EE609C,#F5F588);
+		background: -moz-linear-gradient(#EE609C,#F5F588);
 
 		/* translates the center point of the logo image */
 		transform: translate(-50%, -50%);
@@ -103,6 +105,8 @@ body {
 		width: 150px;
 		height: 150px;
 		background: linear-gradient(#EE609C,#F5F588);
+		background: -webkit-linear-gradient(#EE609C,#F5F588);
+		background: -moz-linear-gradient(#EE609C,#F5F588);
 
 		/* translates the center point of the logo image */
 		transform: translate(-50%, -70%);
