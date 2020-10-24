@@ -29,7 +29,7 @@ body {
 		transform: translate(-50%, 0%);
 
 		/* put the top of the imagage where i want it verticallly */
-		margin-top: -59%;
+		margin-top: -64%;
 	}
 
 	#hidden-content {
@@ -42,21 +42,30 @@ body {
 		transform: translate(-50%, 0%);
 
 		/* put the top of the imagage where i want it verticallly */
-		margin-top: 7%;
+		margin-top: 2%;
 	}
 
 
-	#logo {
+	#square {
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		transform: translate(-50%, -49%);
-		width: 22%;
+		background: linear-gradient(#EE609C,#F5F588);
+
+		/* translates the center point of the logo image */
+		transform: translate(-50%, -50%);
+
+		/* for mobile it would be best to have this as % */
+		width: 86px;
+		height: 86px;
+
+		/* put the top of the imagage where i want it verticallly */
+		margin-top: -4%;
 	}
 
 	#text {
 		position: absolute;
-		top: 96%;
+		top: 94%;
 		left:50%;
 		text-align:center;
 		transform: translate(-50%, -50%);
@@ -87,34 +96,28 @@ body {
 	}
 
 
-	#logo {
-		display: none;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		/* translates the center point of the logo image */
-		transform: translate(-50%, -70%);
-	}
-
 	#square {
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		width: 150px;
 		height: 150px;
-		background: #555;
+		background: linear-gradient(#EE609C,#F5F588);
 
 		/* translates the center point of the logo image */
 		transform: translate(-50%, -70%);
 	}
 
 	#text {
+		width: fit-content;
+		height: fit-content;
 		position: absolute;
+
+		transform: translate(-50%, -50%);
+
 		top: 92%;
-		left:50%;
-		margin-left: -300px;
+		left: 50%;
 		text-align:center;
-		width: 600px;
 	}
 
 }
@@ -130,7 +133,7 @@ a:visited {
 a:hover {
 	text-decoration: none;
 	color: #FFF;
-	background: linear-gradient(0deg, #e66465, #9198e5);
+	/* background: linear-gradient(#EE609C,#F5F588); */
 }
 
 a:active {

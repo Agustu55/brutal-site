@@ -16,19 +16,19 @@
     <!-- all pics will preload everything in the img and obj directory -->
     <div id="preload">
       <?php include 'php/all_pics.php';?>
-      <?php include 'php/all_objs.php';?>
     </div>
 
     <!-- change the src on clicks -->
     <img onclick="randomImg()" id="hidden-content" width="100%" src="img/hrz1.jpg">
-    <img onclick="randomImg()" id="content" width="100%" src="img/img1.jpg">
+    <img onclick="randomImg()" id="content" width="100%" src="img/img2.jpg">
     <div id="text"><a href="real.html">ENTER</a></div>
-    <img onclick="randomImg()" id="logo" src="obj/obj1.png">
 
-    <div onclick="randomImg()" id="square">
-      <p id="hexText"></p>
+    <div onclick="randomImg()" id="square" width=150px height=150px>
+      <!-- <p id="hexText"></p> -->
     </div>
 
     <script type="text/javascript" src="js/loadRandomImg.js"></script>
+
+
   </body>
 </html>
