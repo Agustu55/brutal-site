@@ -8,7 +8,9 @@
     <meta name="Keywords" content="photography, film, 35mm, analog, analogue">
     <meta name="Description" content="gus stevens is a film photographer in salt lake city, ut">
 
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/entrance.css">
+
   </head>
 
   <body>
@@ -21,7 +23,9 @@
     <!-- change the src on clicks -->
     <img onclick="randomImg()" id="hidden-content" width="100%" src="img/hrz1.jpg">
     <img onclick="randomImg()" id="content" width="100%" src="img/img2.jpg">
-    <div id="text"><a href="real.html">ENTER</a></div>
+    <div id="text">
+      <a id="link" href="real.html">ENTER</a>
+    </div>
 
     <div onclick="randomImg()" id="square" width=150px height=150px>
       <!-- <p id="hexText"></p> -->

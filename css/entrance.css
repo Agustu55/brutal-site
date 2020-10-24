@@ -1,20 +1,7 @@
-body {
-	background-color: lightblue;
-	margin-left: 0px;
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-  font-family: Arial, Helvetica, sans-serif;
-	font-size:16px;
-	color: #FFF;
-	text-align:center;
-	letter-spacing:2px;
-}
 
 #preload {
   display: none;
 }
-
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
@@ -50,9 +37,9 @@ body {
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		background: linear-gradient(#EE609C,#F5F588);
-		background: -webkit-linear-gradient(#EE609C,#F5F588);
-		background: -moz-linear-gradient(#EE609C,#F5F588);
+		background: linear-gradient(#FFFF33,#FF00FF);
+		background: -webkit-linear-gradient(#FFFF33,#FF00FF);
+		background: -moz-linear-gradient(#FFFF33,#FF00FF);
 
 		/* translates the center point of the logo image */
 		transform: translate(-50%, -50%);
@@ -104,9 +91,7 @@ body {
 		left: 50%;
 		width: 150px;
 		height: 150px;
-		background: linear-gradient(#EE609C,#F5F588);
-		background: -webkit-linear-gradient(#EE609C,#F5F588);
-		background: -moz-linear-gradient(#EE609C,#F5F588);
+		background: linear-gradient(#FFFF33,#FF00FF);
 
 		/* translates the center point of the logo image */
 		transform: translate(-50%, -70%);
@@ -124,27 +109,4 @@ body {
 		text-align:center;
 	}
 
-}
-
-a:link {
-	text-decoration: none;
-	color: #FFF;
-}
-a:visited {
-	text-decoration: none;
-	color:#FFF;
-}
-a:hover {
-	text-decoration: none;
-	color: #FFF;
-	/* background: linear-gradient(#EE609C,#F5F588); */
-}
-
-a:active {
-	text-decoration: none;
-	color:#FFF;
-}
-a:link {
-	text-decoration: none;
-	color:#FFF;
 }

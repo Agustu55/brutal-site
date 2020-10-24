@@ -5,54 +5,20 @@ html, body, h1, h2, h3, h4, ul, ol, li, p, a {
 }
 
 body {
-
-  padding-left: 15px;
-  padding-right: 15px;
-  background-color: lightblue;
+	background-color: #ffffff;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
   font-family: Arial, Helvetica, sans-serif;
 	font-style: normal;
-  font-size:12px;
-}
-
-ul li {
-  display: inline;
-  padding-right: 18px
-}
-
-ul li last-child {
-  padding-right: 0px;
-}
-
-h1 {
-  color: red;
-  font-size: 24px;
-  margin: 12px 0 12px 0;
-}
-
-h2 {
-  color: orange;
-  font-size: 18px;
-  margin: 14px 0 14px 0;
-}
-
-h3 {
-  color: red;
-  font-size: 16px;
-  margin: 16px 0 16px 0;
-}
-
-h4 {
-  color: yellow;
-  font-size: 14px;
-  margin: 18px 0 18px 0;
+	font-size:16px;
+	text-align:center;
+	letter-spacing:2px;
 }
 
 p {
   margin: 16px 0 16px 0;
-}
-
-a {
-  font-size:56px;
 }
 
 .closeParagraph {
@@ -64,25 +30,23 @@ a {
 	float: center;
 }
 
+a {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
 a:link {
 	text-decoration: none;
-	color: #FFF;
+	color: #000000;
 }
+
 a:visited {
-	text-decoration: none;
-	color:#FFF;
+  color: transparent;
 }
 a:hover {
-	text-decoration: none;
-	color: #FFF;
-  background: linear-gradient(#EE609C,#F5F588);
+  color: transparent;
+}
 
-}
 a:active {
-	text-decoration: none;
-	color:#FFF;
-}
-a:link {
-	text-decoration: none;
-	color:#FFF;
+  color: transparent;
 }

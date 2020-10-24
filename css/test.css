@@ -1,0 +1,31 @@
+/*
+a:link {
+	text-decoration: none;
+	color: #000000;
+}
+
+a:hover {
+  color: transparent;
+}
+ */
+
+a {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+a:link {
+	text-decoration: none;
+	color: #000000;
+}
+
+a:visited {
+  color: transparent;
+}
+a:hover {
+  color: transparent;
+}
+
+a:active {
+  color: transparent;
+}
