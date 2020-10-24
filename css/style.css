@@ -75,7 +75,8 @@ a:visited {
 a:hover {
 	text-decoration: none;
 	color: #FFF;
-	background-color: #FFF;
+  background: linear-gradient(#e66465, #9198e5);
+
 }
 a:active {
 	text-decoration: none;
