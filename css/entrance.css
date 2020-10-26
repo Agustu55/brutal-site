@@ -37,16 +37,13 @@
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		background: linear-gradient(#FFFF33,#FF00FF);
-		background: -webkit-linear-gradient(#FFFF33,#FF00FF);
-		background: -moz-linear-gradient(#FFFF33,#FF00FF);
 
 		/* translates the center point of the logo image */
 		transform: translate(-50%, -50%);
 
 		/* for mobile it would be best to have this as % */
-		width: 86px;
-		height: 86px;
+		width: 22vw;
+		height: 22vw;
 
 		/* put the top of the imagage where i want it verticallly */
 		margin-top: -4%;
@@ -91,13 +88,12 @@
 		left: 50%;
 		width: 150px;
 		height: 150px;
-		background: linear-gradient(#FFFF33,#FF00FF);
 
 		/* translates the center point of the logo image */
 		transform: translate(-50%, -70%);
 	}
 
-	#text {
+	#link {
 		width: fit-content;
 		height: fit-content;
 		position: absolute;

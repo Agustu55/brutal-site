@@ -13,21 +13,20 @@
 
   </head>
 
-  <body>
-
+  <body onload="randomImg()">
     <!-- all pics will preload everything in the img and obj directory -->
     <div id="preload">
       <?php include 'php/all_pics.php';?>
     </div>
 
     <!-- change the src on clicks -->
-    <img onclick="randomImg()" id="hidden-content" width="100%" src="img/hrz1.jpg">
-    <img onclick="randomImg()" id="content" width="100%" src="img/img2.jpg">
-    <div id="text">
-      <a id="link" href="real.html">ENTER</a>
+    <img onclick="randomImg()" id="hidden-content" width="100%">
+    <img onclick="randomImg()" id="content" width="100%">
+    <div id="link">
+      <a id="real" href="real.html">ENTER</a>
     </div>
 
-    <div onclick="randomImg()" id="square" width=150px height=150px>
+    <div onclick="randomImg();saveGradient()" id="square" width=150px height=150px>
       <!-- <p id="hexText"></p> -->
     </div>
 

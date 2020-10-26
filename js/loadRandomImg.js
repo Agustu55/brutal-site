@@ -14,10 +14,32 @@ var gradients = [
   ["#66FFFF","#00FF00"]
 ];
 
-var accent = "#F5F588"
-var init_gradient = [180,"#FFFF33","#FF00FF"]
+var accent = ""
 var curr_gradient = ""
 
+function saveGradient() {
+
+  console.log("saved the gradient" + String(curr_gradient));
+  localStorage.setItem("currentGradient",curr_gradient);
+  return true;
+}
+
+function loadGradient() {
+  // get the current_gradient
+  curr_gradient = localStorage.getItem("currentGradient");
+  // if the current gradient is empty set an initial one
+  if (curr_gradient == "") {
+    console.log("the curr_gradient was empty");
+    curr_gradient = [180,"#FFFF33","#FF00FF"];
+    accent = "#FFFF33";
+  } else {
+    curr_gradient = curr_gradient.split(",");
+  }
+  console.log("loading gradient" + String(curr_gradient));
+
+  // set the square gradient to match the loaded gradient
+  document.getElementById('square').style.background = "linear-gradient("+curr_gradient[0] + "deg," + curr_gradient[1] + "," + curr_gradient[2] +")";
+}
 
 // returns a 3 item array with direction color1 and color2 for a gradient
 function randomGradient() {
@@ -51,15 +73,28 @@ function randomImg(){
    // document.getElementById('hexText').innerHTML = String(gradient[1])+","+String(gradient[2]);
 }
 
-// this one will update the text backgound hover to be the same as the gradient
-document.getElementById('text').addEventListener("mouseover",function() {
-  document.getElementById('text').style.backgroundColor = String(accent)
-  document.getElementById('text').style.backgroundImage = "linear-gradient("+init_gradient[0] + "deg," + init_gradient[1] + "," + init_gradient[2] +")";
-  document.getElementById('text').style.backgroundImage = "linear-gradient("+curr_gradient[0] + "deg," + curr_gradient[1] + "," + curr_gradient[2] +")";
+// this one will update the link backgound hover to be the same as the gradient
+document.getElementById('link').addEventListener("mouseover",function() {
+  console.log("mousover gradient is" + String(curr_gradient));
+  document.getElementById('link').style.backgroundColor = String(accent)
+
+  if (curr_gradient == "") {
+    console.log("hover will be init gradient");
+    document.getElementById('link').style.backgroundImage = "linear-gradient(180deg,FFFF33,FF00FF)";
+  } else {
+    document.getElementById('link').style.backgroundImage = "linear-gradient("+curr_gradient[0] + "deg," + curr_gradient[1] + "," + curr_gradient[2] +")";
+  }
 
 });
 
-document.getElementById('text').addEventListener("mouseout",function() {
-  document.getElementById('text').style.backgroundColor = ""
-  document.getElementById('text').style.backgroundImage = "";
+document.getElementById('link').addEventListener("mouseout",function() {
+  document.getElementById('link').style.backgroundColor = ""
+  document.getElementById('link').style.backgroundImage = "";
+});
+
+// this will hide the background when the user goes back
+window.addEventListener("pageshow", () => {
+  document.getElementById('link').style.backgroundColor = ""
+  document.getElementById('link').style.backgroundImage = "";
+
 });
