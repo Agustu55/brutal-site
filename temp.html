@@ -10,16 +10,21 @@
     <link rel="stylesheet" type="text/css" href="css/real.css">
 
   </head>
-  <body onload="loadGradient()">
+  <body onload="loadGradient();randomImg();">
 
-    <img id="img1" src="img/img3.jpg">
-    <img id="img2" src="img/img16.jpg">
-    <img id="img3" src="img/hrz3.jpg">
+    <!-- all pics will preload everything in the img and obj directory -->
+    <div id="preload">
+      <?php include 'php/all_pics.php';?>
+    </div>
+
+    <img id="img1">
+    <img id="img2">
+    <img id="img3">
 
 
-    <div id="square" width=150px height=150px></div>
+    <div id="square" onclick="randomImg();randomGradient();" width=150px height=150px></div>
 
-    <div id="link">
+    <div id="link1">
       <h3><a id="home" href="index.php">HOME</a></h3>
     </div>
 
@@ -42,10 +47,10 @@
       </a>
     </div> -->
 
+    <script type="text/javascript" src="test_js/gradients.js"></script>
+    <script type="text/javascript" src="test_js/real.js"></script>
 
-
-
-    <script type="text/javascript" src="js/loadRandomImg.js"></script>
+    <!-- <script type="text/javascript" src="js/real.js"></script> -->
 
   </body>
 </html>

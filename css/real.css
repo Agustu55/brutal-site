@@ -1,87 +1,440 @@
+/*1000 is the ideal narrow desktop width */
+/* 1000 is the minimum width for the desktop layout */
+/* anything below 1000 will need the mobile layout */
 
-img {
-  max-width: 100%;
-  max-height: 100%;
+/* all texxt was aligned with dimensions 1000 X 900 */
+
+#preload {
+  display: none;
+}
+
+#canvasWrapper {
+  margin: 5% 5% 5% 5%;
+  max-width: 90%;
+}
+
+.text {
+  width: fit-content;
+  height: fit-content;
+}
+
+.link {
+  width: fit-content;
+  height: fit-content;
+}
+
+.img {
+  width: fit-content;
+  height: fit-content;
 }
 
 /* vertical */
+/* main left */
+#img1div {
+  display: flex;
+  align-items: center;
+  margin-top: 200px;
+}
 #img1 {
-  position: absolute;
-
-  top: 25%;
-  left: 7%;
-
+  float:left;
   max-width: 600px;
   max-height: 600px;
 }
 
-/* vertical */
-
-#img2 {
-  position: absolute;
-
-  top: 10px;
-  left: 75%;
-
-  max-width: 300px;
-  max-height: 300px;
-}
-
-/* horizontal */
-#img3 {
-  position: absolute;
-
-  bottom: 5%;
-  right: 5%;
-  /* left: 5%; */
-
-  max-width: 450px;
-  max-height: 450px;
-}
-
-
-
-#square {
-  position: absolute;
-  transform: translate(-50%, -50%);
-
-  top: 85%;
-  left: 15%;
-
-  width: 100px;
-  height: 100px;
-}
-
-
-#link {
-  position:absolute;
-  width: fit-content;
-  height: fit-content;
-
-  top: 40%;
-  left: 70%;
-}
-
 #text1 {
   position:absolute;
-  /* transform: translate(-50%, -50%); */
+  transform: translate(-50%, -50%);
 
-  width: fit-content;
-  height: fit-content;
-
-  top: 5%;
+  top: 7%;
   left: 15%;
+}
+
+#link1 {
+  position:absolute;
+
+  top: 15%;
+  left: 60%;
 }
 
 #text2 {
   position:absolute;
   transform: translate(-50%, -50%);
 
-  width: fit-content;
-  height: fit-content;
-
   top: 50%;
-  left: 50%;
+  left: 54%;
+}
 
+/* vertical */
+/* top right */
+#img2div {
+  position: absolute;
+  /* right/top is relative to the body */
+  right: 12%;
+  top: 20px;
+}
+#img2 {
+  max-width: 300px;
+  max-height: 300px;
+}
+
+
+
+/* img3  small on small screens */
+@media only screen and (max-width: 975px) {
+  /* horizontal */
+  /* bottom right */
+  #img3div {
+    float: right;
+    position: relative;
+    margin-top: 80px;
+    margin-right: 5%;
+  }
+  #img3 {
+    max-width: 250px;
+    max-height: 250px;
+  }
+}
+
+/* img3 visible on large screens*/
+@media only screen and (min-width: 975px) {
+  /* horizontal */
+  /* bottom right */
+  #img3div {
+    float: right;
+    position: relative;
+    margin-top: -180px;
+  }
+  #img3 {
+    max-width: 450px;
+    max-height: 450px;
+  }
+}
+
+#square1 {
+  position: absolute;
+  /* transform: translate(-50%, -50%); */
+
+  margin-top: 30px;
+
+  width: 50px;
+  height: 50px;
+}
+
+/* horizontal */
+/* left mini */
+#img4div {
+  position: relative;
+  margin-top: 100px;
+  margin-left: 15%;
+}
+#img4 {
+  max-width: 150px;
+  max-height: 150px;
+}
+
+#text3 {
+  position:absolute;
+  transform: translate(-50%, -50%);
+
+  top: 110%;
+  left: 60%;
+}
+
+/* horizontal */
+/* riht full */
+#img5div {
+  float: right;
+  position: relative;
+  margin-right: 5%;
+  margin-top: 15%;
+}
+#img5 {
+  max-width: 754px;
+  max-height: 754px;
+}
+
+#link2 {
+  position:absolute;
+
+  top: 140%;
+  left: 2%
+}
+
+#text4 {
+  position:absolute;
+
+  top: 185%;
+  left: 12%
+}
+
+/* image 6/7/8 */
+/* horizontal row accross screen */
+.imgContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgContainer .imgContainerDiv {
+  padding-top: 220px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.imgContainerDiv img {
+  max-width: 250px;
+  max-height: 250px;
+}
+
+.imgContainer .square {
+  width: 25px;
+  height: 25px;
+  min-width: 25px;
+  min-height: 25px;
+
+  margin-top: 20px;
+}
+
+#linkContainer1 {
+  position: absolute;
+
+  top: 254%;
+  left: 5%
+}
+
+#linkContainer1 h3 {
+  padding-top: 57px;
+}
+
+#linkContainer1 a:hover {
+  text-decoration: underline;
+  color: #000000;
+}
+
+#linkContainer2 {
+  position: absolute;
+
+  top: 254%;
+  left: 87%
+}
+
+#linkContainer2 h3 {
+  padding-top: 57px;
+}
+#linkContainer2 a:hover {
+  text-decoration: underline;
+  color: #000000;
+}
+
+/* vertical */
+/* fulll size */
+#img9div {
+  position: relative;
+  margin-top: 15%;
+}
+#img9 {
+  height: 1000px;
+  width: auto;
+}
+
+#text5 {
+  position:absolute;
+  transform: translate(-50%, -50%);
+
+
+  top: 370%;
+  left: 50%
+}
+
+#square5 {
+  display: none;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  min-width: 100px;
+  min-height: 100px;
+
+  margin-top: -220px;
+  margin-left: 5%
+}
+
+
+
+
+/* if the display is large display 10 and 11 will split the screen */
+@media only screen and (min-width: 1480px) {
+
+  #img10div {
+    position: relative;
+    margin-top: 5%;
+  }
+  #img10 {
+    max-width: 754px;
+    max-height: 754px;
+  }
+
+  #img11div {
+    position: relative;
+    margin-top: 5%;
+  }
+  #img11 {
+    max-width: 754px;
+    max-height: 754px;
+  }
 
 }
+
+/* if the display is small  10 will be on top 11 will split the screen */
+@media only screen and (max-width: 1480px) {
+
+  #img10div {
+    position: relative;
+    margin-top: 5%;
+  }
+  #img10 {
+    max-width: 754px;
+    max-height: 754px;
+  }
+
+  #img11div {
+    display: none;
+    position: relative;
+    margin-top: 5%;
+  }
+  #img11 {
+    display: none;
+    max-width: 754px;
+    max-height: 754px;
+  }
+}
+
+
+
+/* image 12/13/14/15 */
+/* film strip below horizontal image(10) */
+.imgStrip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgStrip .imgStripDiv {
+  padding-top: 40px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.imgStripDiv img {
+  max-width: 125px;
+  max-height: 125px;
+}
+
+/* medium vertical left low on page */
+#img16div {
+  display: flex;
+  justify-content: left;
+  margin-top: 20%;
+}
+#img16 {
+  max-width: 600px;
+  max-height: 600px;
+}
+
+#text6 {
+  position:absolute;
+  transform: translate(-50%, -50%);
+
+
+  top: 510%;
+  right: 0%
+}
+
+#square6 {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  min-height: 50px;
+
+  margin-left: auto;
+}
+
+/* medium vertical right low on page */
+#img17div {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin-top: 20%;
+}
+
+#img17 {
+  max-width: 600px;
+  max-height: 600px;
+}
+
+/* image 18/19/20/21 */
+/* film strip below horizontal image(10) */
+.vrtImgStrip {
+  margin-top: -10%;
+  font-size: 0; /* this gets rid of inlin-block white spaces */
+}
+
+.vrtImgStrip img {
+  display: inline-block;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+#square7 {
+  display: inline-block;
+  margin-left: 2%;
+  width: 15px;
+  height: 15px;
+  min-width: 15px;
+  min-height: 15px;
+}
+
+
+/* img22 on its own line in small screens */
+@media only screen and (max-width: 900px) {
+  #img22div {
+    margin-top: 15%;
+   }
+}
+
+/* img22 and vertical images overlap on big screen */
+@media only screen and (min-width: 900px) {
+  #img22div {
+    margin-top: -15%;
+   }
+}
+
+
+
+#img22 {
+  float: right;
+  max-width: 600px;
+  max-height: 600px;
+  margin-bottom: 15%;
+}
+
+#square8 {
+  display: none;
+  transform: translate(0,-100%);
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  min-height: 50px;
+}
+
+#img23 {
+  margin-top: 20%;
+  padding-right: 5%;
+  width: 1000px;
+  height: auto;
+}
+
+/* #img23 {
+  margin-left: -40%;
+  margin-top: 10%;
+} */
