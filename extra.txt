@@ -1,0 +1,389 @@
+0: "img/vrt14.jpg"
+​
+1: "img/vrt15.jpg"
+​
+2: "img/hrz4.jpg"
+​
+3: "img/vrt20.jpg"
+​
+4: "img/vrt10.jpg"
+​
+5: "img/hrz3.jpg"
+​
+6: "img/hrz5.jpg"
+​
+7: "img/hrz10.jpg"
+​
+8: "img/hrz8.jpg"
+​
+9: "img/vrt18.jpg"
+​
+10: "img/hrz6.jpg"
+​
+11: "img/hrz9.jpg"
+​
+12: "img/vrt17.jpg"
+​
+13: "img/hrz7.jpg"
+​
+14: "img/vrt11.jpg"
+​
+15: "img/vrt1.jpg"
+​
+16: "img/vrt4.jpg"
+​
+17: "img/hrz11.jpg"
+​
+18: "img/vrt13.jpg"
+​
+19: "img/vrt16.jpg"
+​
+20: "img/vrt7.jpg"
+​
+21: "img/hrz2.jpg"
+​
+22: "img/vrt6.jpg"
+​
+23: "img/hrz12.jpg"
+​
+24: "img/vrt19.jpg"
+​
+25: "img/vrt5.jpg"
+​
+26: "img/vrt21.jpg"
+​
+27: "img/vrt2.jpg"
+​
+28: "img/vrt3.jpg"
+​
+29: "img/hrz1.jpg"
+​
+30: "img/vrt8.jpg"
+​
+31: "img/vrt12.jpg"
+​
+32: "img/vrt9.jpg"
+​
+length: 33
+
+
+
+$count=1;
+// go through all the images and create the image gallery item div
+foreach($image_array as $img) {
+        $pad_count = str_pad($count,2,'0',STR_PAD_LEFT);
+        $img_id = "img".$pad_count;
+        $img_title = "PHOTO ".$pad_count;
+        $onmouseover="revealImg($img_id)";
+        $onmousedown="toggleImage($img_id)";
+        console_log($onmouseover);
+        console_log($onmousedown);
+        console_log("<div class='imgGalleryItem' onmouseover='$onmouseover' onmousedown='$onmousedown'>")
+        console_log("<h3>'$img_title'</h3>");
+        console_log("<img id='$img_id' src='$img'>"
+        console_log("</div>");
+        $count++;
+}
+
+
+
+elseif ($count == count($image_array)) {
+                echo "</div>" //close the last imgGalleryColumn if the length of the array is not a multiple of 4
+        }
+
+
+        // every 4 images create an image column
+        if ($count % 4 == 0) {
+                // close the previous column unless it is the first
+                if($count != 0) {
+                        echo "</div>";
+                }
+                // start the new column
+                echo "div class='imgGalleryColumn'>"
+
+        }
+
+
+// go through all the images and create the image gallery item div
+for ($count = 0; $count < count($img_array); $count++) {
+        $img_num = str_pad($count + 1,2,'0',STR_PAD_LEFT);
+        console_log("adding image " .$img_num)
+        $img_id = "img".$ig_num;
+        $img_title = "PHOTO ".$img_num;
+        console_log($img_id);
+        console_log($img_title);
+        $onmouseover="revealImg(\'".$img_id."\')";
+        $onmousedown="toggleImage(\'".$img_id."\')";
+        console_log($onmouseover);
+        console_log($onmousedown);
+        echo "<div class='imgGalleryItem' onmouseover='revealImg(\"$img_id\")' onmousedown='toggleImage(\"$img_id\")'>";
+        echo "<h3>$img_title</h3>";
+        echo "<img id='$img_id' src='$img'>";
+        echo "</div>";
+
+}
+
+
+
+
+
+
+
+
+
+
+for ($count = 0; $count < count($image_array); $count++) {
+        if ($count % 4 == 0) {
+                array_push($image_columns[0],$img_array[$count]);
+        } elseif ($count % 4 == 1) {
+                array_push($image_columns[1],$img_array[$count]);
+        } elseif ($count % 4 == 2) {
+                array_push($image_columns[2],$img_array[$count]);
+        } elseif ($count % 4 == 3) {
+                array_push($image_columns[3],$img_array[$count])
+        }
+}
+
+$master_img_count=0;
+// go through the column arrays to create image gallery items for each column
+for ($column = 0; $column < count($image_columns); $column++) {
+        echo "<div class='imgGalleryColumn'>"
+        foreach ($image_columns[$column] as $img) {
+                print_image_gallery_item($master_img_count,$img);
+                $master_img_count++;
+        }
+        echo "</div>"
+}
+
+<!-- <?php include('php/authenticate.php') ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Login and Registration
+        System - LAMP Stack
+    </title>
+
+    <link rel="stylesheet" type="text/css"
+            href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h2>Login Here!</h2>
+    </div>
+
+    <form method="post" action="login.php">
+
+        <?php include('errors.php'); ?>
+
+        <div class="input-group">
+            <label>Enter Username</label>
+            <input type="text" name="username" >
+        </div>
+        <div class="input-group">
+            <label>Enter Password</label>
+            <input type="password" name="password">
+        </div>
+        <div class="input-group">
+            <button type="submit" class="btn"
+                        name="login_user">
+                Login
+            </button>
+        </div>
+    </form>
+</body>
+
+</html> -->
+
+
+
+
+
+
+<!-- <?php include('php/authenticate.php') ?>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/brollAuth.css">
+    <title></title>
+  </head>
+  <body onload="loadGradient()">
+
+    <div id="canvasWrapper">
+
+      <form method="post" action="brollAuth.php" id="login-form">
+        <div id="names">
+          <input type="text" autocomplete="off" name="firstname" id="first-name-field" class="login-from-field" placeholder="first">
+          <input type="text" autocomplete="off" name="lastname" id="last-name-field" class="login-form-field" placeholder="last">
+        </div>
+        <input type="tel" autocomplete="off" name="phone" id="phone-#-field" class="login-form-field" placeholder="phone #">
+        <p class="mini"> <br>for authentication purposes only
+        <br> i promise i won't sell it</p>
+        <div id="enter">
+            <p id="broll" onclick="checkInfo();">ENTER</p>
+            <button type="submit" class="btn"
+                        name="login">
+                ENTER
+            </button>
+        </div>
+
+      </form>
+    </div>
+
+    <script type="text/javascript" src="js/gradients.js"></script>
+    <script type="text/javascript" src="js/brollAuth.js"></script>
+
+  </body>
+</html> -->
+
+
+// // Starting the session, necessary
+// // for using session variables
+// session_start();
+
+// Declaring and hoisting the variables
+$firstname = "";
+$lastname    = "";
+$phone    = "";
+$errors = array();
+// $_SESSION['firstname'] = "";
+// $_SESSION['lastname'] = "";
+// $_SESSION['phone'] = "";
+// $_SESSION['status'] = "";
+
+
+console_log($_POST);
+
+if (isset($_POST['login'])) {
+  console_log("login was pressed");
+
+  $db = mysqli_connect("localhost","gus","derg","broll");
+
+  // Check connection
+  // if (mysqli_connect_errno()) {
+  //   echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  //   exit();
+  // }
+
+  $firstname = $_POST['firstname'];
+  $lastname = $_POST['lastname'];
+  $phone = $_POST['phone'];
+
+
+  // Error message if the input field is left blank
+  if (empty($firstname)) {
+    array_push($errors, "what's your name");
+  }
+  if (empty($lastname)) {
+    array_push($errors, "last name too...");
+  }
+  if (empty($phone)) {
+    array_push($errors, "it's really just for authentication");
+  }
+
+  // Checking for the errors
+  if (count($errors) == 0) {
+    console_log("authenticating user")
+    $query = "SELECT name FROM users WHERE firstname=
+    '$firstname' AND lastname='$lastname' AND phone='$phone'";
+    $results = mysqli_query($db, $query);
+
+    // $results = 1 means that one user with the
+    // entered username exists
+    if (mysqli_num_rows($results) == 1) {
+      // $_SESSION['fisrtname'] = $firstname;
+      // $_SESSION['status'] = "$firstname has logged in";
+      header('location: broll.html');
+    }
+    else {
+      // Storing username in session variable
+      // $_SESSION['fisrtname'] = $firstname;
+      // $_SESSION['lastname'] = $lastname;
+      // $_SESSION['phone'] = $phone;
+      // $_SESSION['status'] = "$firstname is not allowed";
+      array_push($errors, "you are not allowed");
+    }
+  }
+}
+
+				// if there are no empty fields authenticate the  user
+				if (count($errors) < 1) {
+					console_log($firstname);
+					console_log($lastname);
+					console_log($phone);
+
+					// connect to the database as gus
+					$db = mysqli_connect("localhost","gus","derg","broll");
+
+					if ($db->connect_error)) {
+					  console_log("Failed to connect to MySQL: " . $db->connect_error);
+					  die("Connection failed: " . $db->connect_error);
+					}
+
+					$stmt = $dbConnection->prepare('SELECT name FROM users WHERE firstname=? AND
+					lastname=? AND phone=?');
+
+					$stmt->bind_param("sss", $firstname, $lastname, $phone);
+
+					$result = $stmt->execute();
+
+					console_log($result);
+
+				}
+
+
+
+
+
+
+/* Everything bigger than 600px */
+@media only screen and (min-width: 600px) {
+
+	#content {
+	  position: absolute;
+		top: 50%;
+		left:50%;
+		margin-left: -255px;
+		margin-top:-400px;
+		text-align:center;
+		width: 500px;
+	}
+
+	#hidden-content {
+	  position: absolute;
+	  top: 50%;
+	  left:50%;
+	  margin-left: -255px;
+	  margin-top: 10px;
+	  text-align:center;
+		width: 500px;
+	}
+
+
+	#square1 {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 150px;
+		height: 150px;
+
+		/* translates the center point of the logo image */
+		transform: translate(-50%, -70%);
+	}
+
+	#link {
+		width: fit-content;
+		height: fit-content;
+		position: absolute;
+
+		transform: translate(-50%, -50%);
+
+		top: 92%;
+		left: 50%;
+		text-align:center;
+	}
+
+}

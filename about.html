@@ -2,16 +2,78 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/about.css">
+    <title>ABOUT</title>
   </head>
-  <body>
-    <h3>the details</h3>
 
-    <p>hi, my name is gus stevens. i'm a photographer in slc.</p>
-    <p class="closeParagraph">ummm what else...</p>
-    <p class="closeParagraph">if you see me looking out of place with a black beanie and a camera don't worry, i'm not doing anything sus.</p>
-    <p> <a href="index.html" >home</a> </p>
+  <body onload="loadGradient()">
+      <script> console.log('starting gallery');</script>
+
+      <div class="topDivider">
+        <div class="left">
+        <h3><a id="home" href="real.php">BACK</a></h3>
+        </div>
+      </div>
+
+      <div class="canvasWrapper">
+
+
+        <div class="imgContainer">
+          <div class="imgContainerDiv" id="me1div">
+            <img id="me1" src="me/me1.jpg">
+
+            <div class="imgStrip">
+              <div class="imgStripDiv" id="me2div">
+                <img id="me2" src="me/me2.jpg" onclick="switchImg('me1','me2');">
+              </div>
+              <div class="imgStripDiv" id="me3div">
+                <img id="me3" src="me/me3.jpg" onclick="switchImg('me1','me3');">
+              </div>
+              <div class="imgStripDiv" id="me5div">
+                <img id="me5" src="me/me5.jpg" onclick="switchImg('me1','me5');">
+              </div>
+              <div class="imgStripDiv" id="me5div">
+                <img id="me6" src="me/me6.jpg" onclick="switchImg('me1','me6');">
+              </div>
+            </div>
+          </div>
+
+          <div class="imgContainerDiv">
+            <p>
+              hi, my name is gus. i'm a 23 year old amateur photographer.
+              <br><br>
+              these are some pictures of me that i didn't take,
+              except for the selfie.
+              <br><br>
+              what else...
+              <br>
+              i live in slc, ut.
+              i like to take pictures of houses and old buldings.
+              <br><br>
+              my favorite thing to do is take photos in random towns and neighborhoods.
+              <br><br>
+              i also like to take portraits. although i am *very* amateur
+              at that.
+              <br><br>
+              if you want some pictures or just wanna walk aroud and shoot lmk
+              <br><br>
+              <a id="email" href="mailto:gusdstevens@gmail.com?Subject=hello">gusdstevens@gmail.com</a>
+            </p>
+          </div>
+
+
+        </div>
+
+
+
+      </div>
+
+      <div class="bottomDivider"></div>
+
+
+      <script type="text/javascript" src="js/gradients.js"></script>
+      <script type="text/javascript" src="js/about.js"></script>
+
   </body>
 </html>

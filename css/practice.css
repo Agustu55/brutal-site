@@ -1,0 +1,43 @@
+
+.container {
+	width: 40%;
+  margin: 10px auto;
+  display: flex;
+}
+
+/* the text items */
+.imageGalleryItem {
+	margin: 15px 15px 15px 15px;
+	background-color: lightblue;
+  font-size: 16px;
+  color: white;
+	height: 2em;
+	width: 2em;
+}
+
+/* change background when hover */
+.imageGalleryItem:hover {
+  background: red;
+	height: 8em;
+	width: 8em;
+}
+
+/* add change size on hover 1,4,7*/
+/* [class^="item"]:nth-child(3n + 1):hover {
+	height: 10em;
+	width: 10em;
+} */
+
+
+/* add change size on hover 2,5,6*/
+/* [class^="item"]:nth-child(3n + 2):hover {
+	height: 10em;
+	width: 10em;
+} */
+
+
+/* add change size on hover 3,6,9*/
+/* [class^="item"]:nth-child(3n + 3):hover {
+	height: 10em;
+	width: 10em;
+} */

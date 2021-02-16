@@ -1,0 +1,63 @@
+
+.topDivider {
+  height: 125px;
+  width: 100%;
+}
+
+.bottomDivider {
+  height: 125px;
+  width: 100%;
+}
+
+#canvasWrapper {
+  margin: 10% 10% 10% 10%;
+  max-width: 90%;
+}
+
+
+#names {
+  display: block;
+}
+
+#names input {
+  margin: 0 5% 5% 0;
+}
+
+#enter {
+  margin-top: 10%;
+  /* margin-top: 15%;
+  margin-right: 5%;
+  float: right; */
+  margin-right: auto;
+  margin-left: 50%;
+  text-align: center;
+  display: inline-block;
+}
+
+#enter p:hover {
+  color:transparent;
+  cursor: pointer;
+}
+
+.mini {
+  font-size: 8px;
+}
+
+input {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-size:16px;
+  letter-spacing:2px;
+  text-transform: uppercase;
+
+  padding: 0;
+  background: transparent;
+  /* border: none; */
+  outline-width: 0;
+  border-width: 0 0 2px;
+  border-color: black;
+}
+
+input[type="submit"] {
+  border: none;
+}

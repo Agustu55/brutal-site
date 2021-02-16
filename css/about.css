@@ -1,0 +1,84 @@
+
+/* hide the back button for small screens */
+@media only screen and (max-width: 1000px) {
+  #home {
+    display: none;
+  }
+}
+.topDivider h3{
+  padding: 30px 30px 30px 30px;
+  display: inline-block;
+}
+
+.topDivider {
+  height: 125px;
+  width: 100%;
+}
+
+.bottomDivider {
+  height: 125px;
+  width: 100%;
+}
+
+
+.left {
+    float: left;
+}
+
+#preload {
+  display: none;
+}
+
+#email:hover {
+  color:black;
+  text-decoration: underline;
+}
+
+
+/* image 6/7/8 */
+/* horizontal row accross screen */
+.imgContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.imgContainerDiv {
+  width:35%;
+}
+
+.imgContainerDiv img {
+  max-height: 500px;
+}
+
+.imgContainerDiv p {
+  padding-left: 10%;
+  margin-top: 14%;
+}
+
+
+/* image 12/13/14/15 */
+/* film strip below horizontal image(10) */
+.imgStrip {
+  display: flex;
+  max-width: 333.55px;
+}
+
+.imgStrip .imgStripDiv {
+  padding-top: 40px;
+  margin-left: 7%;
+  margin-right: 7%;
+}
+
+.imgStripDiv img {
+  /* max-height: 60%; */
+}
+
+/* hover pointer on images cause you can press them */
+.imgStrip img:hover {
+  cursor: pointer;
+}
+
+#aboutText {
+  display: inline-block;
+}

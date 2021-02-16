@@ -1,0 +1,15 @@
+#canvasWrapper {
+  margin: 5% 5% 5% 5%;
+  max-width: 90%;
+  display: flex;
+  justify-content: center;
+}
+
+#galleryDiv {
+  margin: 0 auto;
+}
+
+
+#text2 {
+  margin-top: 20%;
+}

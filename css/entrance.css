@@ -4,7 +4,7 @@
 }
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 500px) {
 
 	#content {
 		position: absolute;
@@ -59,7 +59,7 @@
 }
 
 /* Everything bigger than 600px */
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 500px) {
 
 	#content {
 	  position: absolute;
@@ -68,7 +68,9 @@
 		margin-left: -255px;
 		margin-top:-400px;
 		text-align:center;
-		width: 500px;
+		width: 50%;
+    width: 500px;
+    max-height: 754px;
 	}
 
 	#hidden-content {
@@ -78,7 +80,9 @@
 	  margin-left: -255px;
 	  margin-top: 10px;
 	  text-align:center;
+    width: 50%;
 		width: 500px;
+    max-height: 754px;
 	}
 
 

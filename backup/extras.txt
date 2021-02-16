@@ -123,3 +123,21 @@ window.addEventListener("pageshow", () => {
   <p>i need to sell <h3 style="display: inline;">&ge;one print</h3>
   to pay for the cloud</p>
 </div>
+
+
+
+/* img3  small on small screens */
+@media only screen and (max-width: 975px) {
+  /* horizontal */
+  /* bottom right */
+  #img3div {
+    float: right;
+    position: relative;
+    margin-top: 80px;
+    margin-right: 5%;
+  }
+  #img3 {
+    max-width: 250px;
+    max-height: 250px;
+  }
+}

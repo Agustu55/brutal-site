@@ -34,3 +34,20 @@ a:hover {
 a:visited {
   color: #000000;
 }
+
+/* cursor over text will stay the same */
+h3:hover {
+  cursor: default;
+}
+
+p:hover {
+  cursor: default;
+}
+
+h1:hover {
+  cursor:pointer;
+}
+
+.square:hover {
+  cursor:pointer;
+}

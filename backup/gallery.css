@@ -1,0 +1,44 @@
+
+.imgGallery {
+  justify-content: center;
+  margin: 10px auto;
+  display: flex;
+}
+
+/* the text items */
+.imgGalleryItem {
+	margin: 15px 15px 15px 15px;
+  color: black;
+}
+
+/* default images display as nothing */
+.imgGalleryItem img {
+  display: none;
+}
+
+/* change background when hover */
+.imgGalleryItem:hover {
+  text-decoration: underline;
+  text-align: center;
+  width: 500px;
+  height: 500px;
+}
+
+/* idk why this only works on h3 but this will show the image on hover */
+.imgGalleryItem h3:hover +img {
+  display: block;
+}
+
+/* this will keep the image open */
+.imgGalleryItem img:hover {
+  display: block;
+}
+
+.topdivider {
+  height: 100px;
+  width: 100%;
+}
+.bottomDivider {
+  height: 1000px;
+  width: 100%;
+}

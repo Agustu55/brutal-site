@@ -42,6 +42,14 @@ function loadGradient() {
   return curr_gradient
 }
 
+// return a gradient without impacting the current gradient
+function getSingleGradient() {
+  var direction = Math.floor(Math.random() * 361);
+  var gradient = gradients[Math.floor(Math.random() * gradients.length)];
+
+  return [direction,gradient[0],gradient[1]];
+}
+
 // returns a 3 item array with direction color1 and color2 for a gradient
 function getGradient() {
   var direction = Math.floor(Math.random() * 361);

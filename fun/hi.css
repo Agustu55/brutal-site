@@ -1,0 +1,39 @@
+#canvasWrapper {
+  max-width: 40%;
+  margin: 10% auto;
+  align-items: center;
+}
+
+p {
+  font-size:10px;
+}
+
+#ski {
+  margin-top: 40px;
+}
+#hike {
+  margin-top: 80px;
+}
+
+.counter {
+  margin-top: 10px;
+}
+
+.counter p {
+  display: inline;
+}
+
+.counter h1 {
+  display: inline;
+  font-size:64px;
+  font-stretch: ultra-condensed;
+  font-weight: 100;
+}
+
+#ski_time {
+  word-spacing: 10px;
+}
+
+#hike_time {
+  word-spacing: 10px;
+}

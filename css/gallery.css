@@ -1,0 +1,71 @@
+.topdivider h3{
+  padding: 30px 30px 30px 30px;
+  display: inline-block;
+}
+
+/* this will stretch text if you want to use it */
+/* transform:scale(2,1) */
+
+.left {
+    float: left;
+}
+
+.right {
+    float:right;
+}
+
+.imgGallery {
+  width: 80%;
+  /* text-align: center; */
+  justify-content: center;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.imgGalleryColumn {
+  min-width: 20%;
+}
+
+.imgGalleryItem .pin {
+  float: right;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  display: none;
+  transform: rotate(90deg);
+}
+
+.imgGalleryItem .pin:hover {
+  cursor: pointer;
+}
+
+/* default images display as nothing */
+.imgGalleryItem .img {
+  margin-top: 10px;
+  display: none;
+}
+
+.imgGallery div {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.imgGalleryItem div:hover {
+  cursor: default;
+}
+
+/* the text items */
+.imgGalleryItem {
+	margin: 15px 15px 15px 15px;
+  color: black;
+}
+
+.topdivider {
+  height: 100px;
+  width: 100%;
+}
+.bottomDivider {
+  height: 100px;
+  width: 100%;
+}
