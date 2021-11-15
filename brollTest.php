@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -21,42 +22,40 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>HOME</title>
-
-    <meta name="Keywords" content="photography, film, 35mm, analog, analogue">
-    <meta name="Description" content="gus stevens is a film photographer in salt lake city, ut">
+    <title>GUS STEVENS</title>
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/entrance.css">
+    <link rel="stylesheet" type="text/css" href="css/broll.css">
 
   </head>
-
-  <body onload="randomGradient();randomImg();">
+  <body>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K9X36MD"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <!-- all pics will preload everything in the img and obj directory -->
-    <div id="preload">
-      <?php include 'php/all_pics.php';?>
-    </div>
+    <div id="canvasWrapper">
 
-    <!-- change the src on clicks -->
-    <img onclick="randomImg();" id="hidden-content" width="100%">
-    <img onclick="randomImg();" id="content" width="100%">
-    <div id="link">
-      <a id="real" href="real.php">ENTER</a>
-    </div>
+        <div id="text1">
+          <p> the pictures i don't want everyone to see
+            <br>
+            <br>
+            but you can.
+            <br>
+            feel free to download any of them
+          </p>
+        </div>
 
-    <div onclick="randomImg();randomGradient();" class="square" id="square1" width=150px height=150px>
-      <!-- <p id="hexText"></p> -->
-    </div>
+        <!-- <div id="img1div">
+          <img id="img1" src="broll/broll2.jpg">
+        </div> -->
 
-    <script type="text/javascript" src="js/gradients.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
+        <!-- this code will load a bunch of pictures -->
+        <?php include 'php/broll_pics.php';?>
 
-    <!-- <script type="text/javascript" src="js/index.js"></script> -->
+        <script type="text/javascript" src="js/gradients.js"></script>
+
+      </div>
 
   </body>
 </html>

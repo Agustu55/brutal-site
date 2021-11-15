@@ -1,0 +1,97 @@
+/* basically just for a phone if it gets here */
+@media only screen and (max-width: 500px) {
+  .topDivider {
+    height: 75px;
+    width: 100%;
+  }
+}
+
+/* for everything else */
+@media only screen and (min-width: 500px) {
+  .topDivider {
+    height: 75px;
+    width: 100%;
+  }
+
+  .bottomDivider {
+    height: 50px;
+    width: 100%;
+  }
+}
+
+.topDivider {
+  height: 75px;
+  width: 100%;
+}
+
+.topDivider h3 {
+    padding: 30px 30px 10px 30px;
+    display: inline-block;
+}
+
+.canvasWrapper {
+  margin: 1% 20% 5% 5%;
+  max-width: 750px;
+  min-width: 475px;
+}
+
+.post {
+  height: 125px;
+}
+ul {
+  list-style: none;
+}
+
+li {
+  height: 125px;
+}
+
+img {
+    float: left;
+    width: 120px;
+    height: 80px;
+
+    padding-right: 15px;
+    object-fit: cover;
+}
+
+.title {
+}
+
+.intro {
+  font-size: 12px;
+  color: Gray;
+
+  overflow:hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+.date {
+  font-size: 10px;
+  color: silver;
+  padding-bottom: 5px;
+  padding-top: 2px;
+}
+
+.month {
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+
+.day {
+  font-size: 12px;
+}
+
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.right a {
+  padding-right: 30px;
+  float: right;
+}

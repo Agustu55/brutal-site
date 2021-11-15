@@ -31,25 +31,25 @@ function randomGradient(){
 }
 
 // this one will update the link backgound hover to be the same as the gradient
-document.getElementById('real').addEventListener("mouseover",function() {
-  document.getElementById('real').style.backgroundColor = String(accent)
+document.getElementById('link').addEventListener("mouseover",function() {
+  document.getElementById('link').style.backgroundColor = String(accent)
 
   if (curr_gradient == "") {
-    document.getElementById('real').style.backgroundImage = "linear-gradient(180deg,FFFF33,FF00FF)";
+    document.getElementById('link').style.backgroundImage = "linear-gradient(180deg,FFFF33,FF00FF)";
   } else {
-    document.getElementById('real').style.backgroundImage = "linear-gradient("+curr_gradient[0] + "deg," + curr_gradient[1] + "," + curr_gradient[2] +")";
+    document.getElementById('link').style.backgroundImage = "linear-gradient("+curr_gradient[0] + "deg," + curr_gradient[1] + "," + curr_gradient[2] +")";
   }
 
 });
 
-document.getElementById('real').addEventListener("mouseout",function() {
-  document.getElementById('real').style.backgroundColor = ""
-  document.getElementById('real').style.backgroundImage = "";
+document.getElementById('link').addEventListener("mouseout",function() {
+  document.getElementById('link').style.backgroundColor = ""
+  document.getElementById('link').style.backgroundImage = "";
 });
 
 // this will hide the background when the user goes back
 window.addEventListener("pageshow", () => {
-  document.getElementById('real').style.backgroundColor = ""
-  document.getElementById('real').style.backgroundImage = "";
+  document.getElementById('link').style.backgroundColor = ""
+  document.getElementById('link').style.backgroundImage = "";
 
 });

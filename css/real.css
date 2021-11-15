@@ -23,6 +23,9 @@
     display: none;
   }
 
+  #blogLink {
+    display: none;
+  }
   #text2 {
     display: block;
     position:absolute;
@@ -90,6 +93,15 @@
     right: 40px;
   }
 
+  #mobile_blog_gallery {
+    margin-top: 25px;
+    padding: 5%;
+  }
+
+  #mobile_gallery_link {
+    margin-left: 150px;
+  }
+
   #img2 {
     padding: 5%;
     float: right;
@@ -98,15 +110,34 @@
   }
 
   #img3 {
+    display: none;
     max-width: 300px;
     margin-top: 300px;
     padding:5%;
   }
+
   #img4 {
+    display: none;
     padding:5%;
     max-width: 300px;
   }
   #img5 {
+    display: none;
+    padding:5%;
+    max-width: 300px;
+  }
+
+  #mobile_img3 {
+    max-width: 300px;
+    margin-top: 300px;
+    padding:5%;
+  }
+
+  #mobile_img4 {
+    padding:5%;
+    max-width: 300px;
+  }
+  #mobile_img5 {
     padding:5%;
     max-width: 300px;
   }
@@ -182,141 +213,106 @@
   }
 
   #img16 {
-    padding-top: 15%;
-    margin: 0 auto;
-    display: block;
-    max-width: 80%;
-    max-height: 80%;
+    display: none;
   }
 
   #img17 {
-    padding-top: 20%;
-    margin: 0 auto;
     display: none;
-    max-width: 70%;
-    max-height: 70%;
   }
 
   #img18 {
-    padding-top: 20%;
-    margin: 0 auto;
-    display: block;
-    max-width: 60%;
-    max-height: 60%;
+    display: none;
   }
 
   #img19 {
-    padding-top: 20%;
-    margin: 0 auto;
-    display: block;
-    max-width: 50%;
-    max-height: 50%;
+    display: none;
   }
 
   #img20 {
-    padding-top: 20%;
-    margin: 0 auto;
-    display: block;
-    max-width: 40%;
-    max-height: 40%;
+    display: none;
   }
   #img21 {
-    padding-top: 20%;
-    margin: 0 auto;
-    display: block;
-    max-width: 25%;
-    max-height: 25%;
+    display: none;
   }
 
   #mobile_img29 {
-    padding-top: 20%;
-    margin: 0 auto;
-    display: none;
-    max-width: 25%;
-    max-height: 25%;
+    padding-top: 10%;
+    margin-left: 25px;
+    max-width: 200px;
+    max-height: 200px;
   }
 
   #mobile_img30 {
-    padding-top: 20%;
+    padding-top: 60%;
     margin: 0 auto;
     display: block;
-    max-width: 25%;
-    max-height: 25%;
+    max-width: 300px;
+    max-height: 300px;
   }
 
   #mobile_img31 {
-    padding-top: 20%;
+    padding-top: 30%;
     margin: 0 auto;
     display: block;
-    max-width: 40%;
-    max-height: 40%;
+    max-width: 300px;
+    max-height: 300px;
   }
 
   #mobile_img32 {
-    padding-top: 20%;
+    padding-top: 30%;
     margin: 0 auto;
     display: block;
-    max-width: 50%;
-    max-height: 50%;
+    max-width: 300px;
+    max-height: 300px;
   }
 
   #mobile_img33 {
-    padding-top: 20%;
-    margin: 0 auto;
-    display: block;
-    max-width: 60%;
-    max-height: 60%;
+    padding-top: 60%;
+    max-width: 200px;
+    max-height: 200px;
+    float: right;
+    margin-right: 6.5%;
   }
 
   #mobile_img34 {
     padding-top: 20%;
     margin: 0 auto;
     display: none;
-    max-width: 70%;
-    max-height: 70%;
-  }
-
-  #mobile_img35 {
-    padding-top: 20%;
-    margin: 0 auto;
-    display: block;
     max-width: 80%;
     max-height: 80%;
   }
 
-  #mobile_img36 {
-    padding-top: 20%;
+  #mobile_img35 {
+    padding-top: 15%;
     margin: 0 auto;
     display: block;
     max-width: 90%;
     max-height: 90%;
   }
 
-  #mobile_img37 {
-    padding-top: 20%;
+  #mobile_img36 {
+    padding-top: 75%;
     margin: 0 auto;
-    display: none;
-    max-width: 80%;
-    max-height:80%;
-  }
-  #mobile_img38 {
-    padding-top: 20%;
-    margin: 0 auto;
-    display: none;
-    max-width: 90%;
-    max-height:90%;
+    display: block;
+    max-width: 200px;
+    max-height: 200px;
   }
 
+  #mobile_img37 {
+    display: none;
+  }
+  #mobile_img38 {
+    display: none;
+  }
   #img22 {
     display: none;
   }
-
   #img23 {
     display: none;
   }
 
   #mobile_notes {
-    padding-top: 150%;
+    padding-top: 45%;
     padding-bottom: 50%;
     display: flex;
     justify-content: center;
@@ -400,6 +396,13 @@
     left: 60%;
   }
 
+  #blogLink {
+    position: absolute;
+
+    padding-top: 25px;
+    left: 35%;
+  }
+
   #text2 {
     position:absolute;
     transform: translate(-50%, -50%);
@@ -407,9 +410,6 @@
     top: 500px;
     left: 54%;
   }
-
-  /* todo: need to change text and box color (black) and get rid of onclick when 'no' is clicked */
-  /* todo: need to make sure to update the images in imgstrips when 'yes' is clicked */
 
   /* vertical */
   /* top right */
@@ -493,6 +493,11 @@
     left: 12%
   }
 
+  #text4 a:hover {
+    text-decoration: underline;
+    color: #000000;
+  }
+
   /* image 6/7/8 */
   /* horizontal row accross screen */
   .imgContainer {
@@ -551,6 +556,12 @@
   #linkContainer2 a:hover {
     text-decoration: underline;
     color: #000000;
+  }
+
+  /* about link will highlight instead of underline */
+  #prints24_link:hover {
+    text-decoration: none !important;
+    color: transparent !important;
   }
 
   /* vertical */
@@ -714,6 +725,11 @@
     margin-top: -5%;
   }
 
+  #text7 a:hover {
+    text-decoration: underline;
+    color: #000000;
+  }
+
   #text8 {
     position:absolute;
     transform: translate(-50%, -50%);
@@ -841,7 +857,7 @@
 
 
   #extra_text {
-    display: none;
+    /* display: none; */
     text-align: center;
     width: 80%;
     margin: 0 auto;
@@ -850,13 +866,13 @@
   }
 
   /* increase the line height of the br element to seperate the dashes */
-  #extra_text br {
-    line-height: 500%;
+  #extra_text h2 {
+    color: white;
+    line-height: 350%;
   }
 
-
   #extra_links {
-    display: none;
+    /* display: none; */
     text-align: center;
     padding-bottom: 100px;
   }
@@ -883,7 +899,7 @@
   }
 
   #text13 {
-    display: none;
+    /* display: none; */
     text-align: center;
   }
 

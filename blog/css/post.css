@@ -1,0 +1,102 @@
+/* basically just for a phone if it gets here */
+@media only screen and (max-width: 500px) {
+
+  .topDivider {
+    height: 75px;
+    width: 100%;
+  }
+
+
+}
+
+/* for everything else */
+@media only screen and (min-width: 500px) {
+
+  .topDivider {
+    height: 75px;
+    width: 100%;
+  }
+
+  .bottomDivider {
+    height: 50px;
+    width: 100%;
+  }
+
+}
+
+.canvasWrapper {
+  margin: 1% 20% 5% 5%;
+  max-width: 750px;
+}
+
+.canvasWrapper ul {
+  list-style: none;
+}
+
+figure {
+  padding-top: 25px;
+  padding-bottom: 10px;
+  margin: 0;
+}
+
+figcaption {
+  padding-top: 8px;
+  text-align: left;
+  color: gray;
+  font-size: 12px;
+  letter-spacing:1px;
+}
+
+img {
+  max-height: 600px;
+}
+
+p {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+body {
+  line-height: 1.4;
+  font-size: 14px;
+  color: #222;
+}
+
+.title {
+  padding-top: 0px;
+  padding-bottom: 10px;
+  font-size: 16px;
+  color: black;
+}
+
+.date {
+  padding-top: 8px;
+  font-size: 12px;
+  color: gray;
+}
+
+.tiny {
+  font-size: 12px;
+  color: gray;
+
+  overflow:hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+.footer{
+  padding-top: 40px;
+  font-size: 12px;
+}
+
+.footer a {
+  text-decoration: none;
+  color: grey;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #222;
+}

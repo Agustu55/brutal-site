@@ -12,7 +12,7 @@ body {
 	margin-bottom: 0px;
   font-family: Arial, Helvetica, sans-serif;
 	font-style: normal;
-	font-size:16px;
+	/* font-size:14px; */
 	letter-spacing:2px;
 }
 
@@ -28,7 +28,7 @@ a {
 }
 
 a:hover {
-  color: transparent;
+  text-decoration: underline;
 }
 
 a:visited {
@@ -42,14 +42,6 @@ h3:hover {
 
 p:hover {
   cursor: default;
-}
-
-h1:hover {
-  cursor:pointer;
-}
-
-.square:hover {
-  cursor:pointer;
 }
 
 a:active, a:focus, a:visited {

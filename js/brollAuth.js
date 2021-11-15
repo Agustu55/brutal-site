@@ -17,9 +17,11 @@ filter.push(9);     //tab
 filter.push(46);    //delete
 filter.push(37);    //left arrow
 filter.push(39);    //right arrow
+filter.push(13);    //enter key
 
 function onKeyDown(e){
   if(filter.indexOf(e.keyCode) < 0){
+    // this will allow enter to submit the form from the phone number page
     e.preventDefault();
     return false;
   }
@@ -50,24 +52,8 @@ var phoneField = document.getElementById("phone-#-field");
 phoneField.addEventListener("keydown", onKeyDown);
 phoneField.addEventListener("keyup", onKeyUp);
 
-// this function will verify the user based on the name and phone # provided in the auth page
-function checkInfo() {
-  var first = document.getElementById("first-name-field").value;
-  var last = document.getElementById("last-name-field").value;
-  var phone = document.getElementById("phone-#-field").value;
-
-
-
-  console.log("authorizing user")
-  console.log("first name: " + first)
-  console.log("last name: " + last)
-  console.log("phone #: " + phone)
-}
-
-
 // code to modify hover elements
-var links=["broll"]
-console.log("adding gradient to links")
+var links=["brollButton"]
 
 // this one will update the link backgound hover to be the same as the gradient
 document.getElementById(links[0]).addEventListener("mouseover",function() {

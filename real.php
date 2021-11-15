@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-206931718-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-206931718-1');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-K9X36MD');</script>
+    <!-- End Google Tag Manager -->
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -11,6 +29,11 @@
 
   </head>
   <body onload="setGradient();defaultImg();loadImg();imgDown();imgDown();" onresize="hideExtraLinks();">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K9X36MD"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
 
     <!-- all pics will preload everything in the img and obj directory -->
     <div id="preload">
@@ -43,6 +66,10 @@
         </div>
       </div>
 
+      <div id="blogLink">
+        <h3><a id="blog_link" href="/blog/main.html">BLOG</a></h3>
+      </div>
+
       <!-- these links are for the mobile website -->
       <div id="link3">
         <a id="mobile_print_link" href="https://gusdstevens.darkroom.tech/">prints</a>
@@ -53,7 +80,6 @@
       <div id="link5">
         <a id="mobile_home_link" href="index.php">home</a>
       </div>
-
 
       <div class="square" id="square1" onclick="randomImg('img1');"></div>
       <div id="img2div">
@@ -74,13 +100,37 @@
         <img id="img5">
       </div>
 
+
+      <!-- these are images 3,4,5 but as links for the mobile version -->
+      <div id="mobile_img3div">
+        <a href="https://gusdstevens.darkroom.tech/">
+          <img id="mobile_img3">
+        </a>
+      </div>
+      <div id="mobile_img4div">
+        <a href="about.html">
+          <img id="mobile_img4">
+        </a>
+      </div>
+      <div id="mobile_img5div">
+        <a href="index.php">
+          <img id="mobile_img5">
+        </a>
+      </div>
+
+      <div id="mobile_blog_gallery">
+          <a id="mobile_blog_link" href="blog/main.html">blog</a>
+          <a id="mobile_gallery_link" href="gallery.php">gallery</a>
+      </div>
+
+
       <div id="link2">
         <h3><a id="gallery_link" href="gallery.php">GALLERY</a></h3>
       </div>
 
       <div id="text4">
         <p>if you're hardcore film only</p>
-        <h3><a id="analog_link" href="underConstruction.html">CLICK HERE</a></h3>
+        <b><a id="analog_link" href="analog.html">CLICK HERE</a></b>
         <p>for the
           <br>
           analog website</p>
@@ -232,11 +282,11 @@
           <p>
             you can also have any image here
             <br>
-            <b><em>FOR $10</em></b>
+            <b><em><a id="ten_link" target="_blank" href="https://gusdstevens.darkroom.tech/">FOR $15</a></em></b>
             printed on paper
             <br>
             <br>
-            and NOT illegaly downloaded
+            and NOT illegally downloaded
           </p>
         </div>
 
@@ -262,7 +312,7 @@
               please know
             </p>
             <ul>
-              <li>i am not being suss</li>
+              <li>i am not being sus</li>
               <li>if you ask what i'm doing i will say the light is good</li>
               <li>the light may not be good</li>
             </ul>
@@ -366,45 +416,6 @@
             |<br>
             |<br>
             |<br>
-            |<br>
-            |<br>
-            |<br>
-            |<br>
-            |<br>
-            |<br>
-            |<br>
-            |<br>
-            |<br>
-            |<br>
-            |<br>
-            |<br>
-            |<br>
-            |<br>
-            |<br>
-            |<br>
-            |<br>
-            |<br>
-            |<br>
-            |<br>
-            |<br>
-            |<br>
-            |<br>
-            |<br>
-            |<br>
-            |<br>
-            |<br>
-            |<br>
-            |<br>
-            |<br>
-            |<br>
-            |<br>
-            |<br>
-            |<br>
-            |<br>
-            |<br>
-            |<br>
-            |<br>
-            |<br>
             &#9660;
            </h2>
         </div>
@@ -431,17 +442,19 @@
           <a href="brollAuth.php">
             <img id="broll_pic">
           </a>
-          <a class="tiny" id="broll" href="brollAuth.php">broll</a>
+          <a class="tiny" id="broll" target="_blank" href="brollAuth.php">broll</a>
         </div>
       </div>
 
       <div id="text13">
         <div>
-          <p> it's just links &colon;&#41;</p>
+          <!-- <p> it's just links &colon;&#41;</p> -->
+          <p></p>
           <br>
           <br>
           <br>
-          <p> if you are underwhelmed i understand <br> and here is a link back to the top</p>
+          <!-- <p> if you are underwhelmed i understand <br> and here is a link back to the top</p> -->
+          <p></p>
           <p class="tiny" onclick="up();"> top </p>
 
         </div>

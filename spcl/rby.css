@@ -1,0 +1,69 @@
+.canvasWrapper {
+  margin: 5% auto 5% auto;
+  max-width: 1100px;
+  padding: 5% 5% 5% 5%;
+}
+
+#text1 {
+  margin-left: 5%;
+}
+
+
+#img1div {
+  margin-top: 5%;
+}
+#img1 {
+  max-width: 800px;
+  max-height: 800px;
+}
+
+
+#img2div {
+  margin-top: 20%;
+  position: relative;
+  margin-left: 60%;
+}
+
+#text2 {
+  margin-top: 5%;
+  margin-right: 1%;
+  float: right;
+}
+#circle {
+  position: absolute;
+  width: 166px;
+  height: 250px;
+  padding: 25px 25px 25px 25px;
+  background: transparent;
+  border-style: dashed;
+  border-width: thin;
+  border-radius: 50%;
+  z-index: 9;
+  transform: translate(-25px,-25px);
+}
+
+#img2 {
+  position: absolute;
+  max-width: 250px;
+  max-height: 250px;
+}
+
+#text3 {
+  margin-top: 25%;
+  margin-left: 7%;
+}
+
+#text3 a:hover {
+  text-decoration: underline;
+  color: #000000;
+}
+
+#text4 {
+  margin-right: 1%;
+  margin-top: 10%;
+  float: right;
+}
+.bottomDivider {
+  height: 200px;
+  width: 100%;
+}

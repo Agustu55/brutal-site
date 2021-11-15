@@ -1,10 +1,3 @@
-
-/* hide the back button for small screens */
-@media only screen and (max-width: 1000px) {
-  #home {
-    display: none;
-  }
-}
 .topDivider h3{
   padding: 30px 30px 30px 30px;
   display: inline-block;
@@ -18,7 +11,18 @@
 .bottomDivider {
   height: 125px;
   width: 100%;
+  position: relative;
 }
+
+#text1 {
+  position: absolute;
+  right: 5%;
+  bottom: 25%;
+  font-size: 10px;
+  color: gray;
+}
+
+
 
 
 .left {
@@ -34,6 +38,10 @@
   text-decoration: underline;
 }
 
+#webemail:hover {
+  color:black;
+  text-decoration: underline;
+}
 
 /* image 6/7/8 */
 /* horizontal row accross screen */

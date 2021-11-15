@@ -28,16 +28,21 @@ function defaultImg(){
    document.getElementById('mobile_img27').src = "img/vrt12.jpg";
    document.getElementById('mobile_img28').src = "img/vrt17.jpg";
 
-   document.getElementById('mobile_img29').src = "img/vrt13.jpg";
+   document.getElementById('mobile_img29').src = "img/hrz8.jpg";
    document.getElementById('mobile_img30').src = "img/vrt1.jpg";
-   document.getElementById('mobile_img31').src = "img/vrt18.jpg";
-   document.getElementById('mobile_img32').src = "img/vrt7.jpg";
-   document.getElementById('mobile_img33').src = "img/vrt2.jpg";
+   document.getElementById('mobile_img31').src = "img/vrt2.jpg";
+   document.getElementById('mobile_img32').src = "img/vrt5.jpg";
+   document.getElementById('mobile_img33').src = "img/hrz13.jpg";
    document.getElementById('mobile_img34').src = "img/vrt19.jpg";
-   document.getElementById('mobile_img35').src = "img/vrt19.jpg";
+   document.getElementById('mobile_img35').src = "img/vrt13.jpg";
    document.getElementById('mobile_img36').src = "img/vrt22.jpg";
    document.getElementById('mobile_img37').src = "img/vrt12.jpg";
    document.getElementById('mobile_img38').src = "img/vrt13.jpg";
+
+   document.getElementById('mobile_img3').src = "img/hrz3.jpg";
+   document.getElementById('mobile_img4').src = "img/hrz12.jpg";
+   document.getElementById('mobile_img5').src = "img/hrz11.jpg";
+
 
 }
 
@@ -89,7 +94,7 @@ function randomSingleGradient(squareId) {
 function loadImg() {
   document.getElementById("insta_pic").src="img/insta2.jpg";
   document.getElementById("vsco_pic").src="img/vsco1.jpg";
-  document.getElementById("broll_pic").src="broll/broll2.jpg";
+  document.getElementById("broll_pic").src="broll/table.jpg";
   document.getElementById("img12").src="img/hrz1.jpg";
   document.getElementById("img13").src="img/hrz2.jpg";
   document.getElementById("img14").src="img/hrz3.jpg";
@@ -143,6 +148,7 @@ function showExtraLinks() {
   document.getElementById("extra_links").style.display='flex';
   document.getElementById("extra_text").style.display='block';
   document.getElementById("text13").style.display='block';
+
 }
 
 // hide extralinks div when screen is shrunk on desktop views
@@ -152,6 +158,7 @@ function hideExtraLinks() {
     document.getElementById("extra_links").style.display='none';
     document.getElementById("extra_text").style.display='none';
     document.getElementById("text13").style.display='none';
+
   }
 }
 // javascript to scroll the document to bottom of page when arrow is clicked
@@ -166,9 +173,10 @@ function up() {
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 
   // hide the extra text and links and stuff
-  document.getElementById("extra_links").style.display='none';
-  document.getElementById("extra_text").style.display='none';
-  document.getElementById("text13").style.display='none';
+  // document.getElementById("extra_links").style.display='none';
+  // document.getElementById("extra_text").style.display='none';
+  // document.getElementById("text13").style.display='none';
+
 }
 
 function scrollDown() {
@@ -198,7 +206,7 @@ function scrollDown() {
 
 
 // code to modify hover elements
-var links=["home_link","gallery_link","analog_link","mobile_about_link","mobile_home_link","mobile_print_link"]
+var links=["blog_link","home_link","gallery_link","mobile_gallery_link", "mobile_blog_link", "mobile_about_link","mobile_home_link","mobile_print_link","prints24_link"]
 
 // this one will update the link backgound hover to be the same as the gradient
 document.getElementById(links[0]).addEventListener("mouseover",function() {
@@ -311,7 +319,56 @@ window.addEventListener("pageshow", () => {
   document.getElementById(links[5]).style.backgroundImage = "";
 });
 
+// this one will update the link backgound hover to be the same as the gradient
+document.getElementById(links[6]).addEventListener("mouseover",function() {
+  document.getElementById(links[6]).style.backgroundColor = String(accent)
+  document.getElementById(links[6]).style.backgroundImage = "linear-gradient("+curr_gradient[0] + "deg," + curr_gradient[1] + "," + curr_gradient[2] +")";
+});
 
+document.getElementById(links[6]).addEventListener("mouseout",function() {
+  document.getElementById(links[6]).style.backgroundColor = ""
+  document.getElementById(links[6]).style.backgroundImage = "";
+});
+
+// this will hide the background when the user goes back
+window.addEventListener("pageshow", () => {
+  document.getElementById(links[6]).style.backgroundColor = ""
+  document.getElementById(links[6]).style.backgroundImage = "";
+});
+
+// this one will update the link backgound hover to be the same as the gradient
+document.getElementById(links[7]).addEventListener("mouseover",function() {
+  document.getElementById(links[7]).style.backgroundColor = String(accent)
+  document.getElementById(links[7]).style.backgroundImage = "linear-gradient("+curr_gradient[0] + "deg," + curr_gradient[1] + "," + curr_gradient[2] +")";
+});
+
+document.getElementById(links[7]).addEventListener("mouseout",function() {
+  document.getElementById(links[7]).style.backgroundColor = ""
+  document.getElementById(links[7]).style.backgroundImage = "";
+});
+
+// this will hide the background when the user goes back
+window.addEventListener("pageshow", () => {
+  document.getElementById(links[7]).style.backgroundColor = ""
+  document.getElementById(links[7]).style.backgroundImage = "";
+});
+
+// this one will update the link backgound hover to be the same as the gradient
+document.getElementById(links[8]).addEventListener("mouseover",function() {
+  document.getElementById(links[8]).style.backgroundColor = String(accent)
+  document.getElementById(links[8]).style.backgroundImage = "linear-gradient("+curr_gradient[0] + "deg," + curr_gradient[1] + "," + curr_gradient[2] +")";
+});
+
+document.getElementById(links[8]).addEventListener("mouseout",function() {
+  document.getElementById(links[8]).style.backgroundColor = ""
+  document.getElementById(links[8]).style.backgroundImage = "";
+});
+
+// this will hide the background when the user goes back
+window.addEventListener("pageshow", () => {
+  document.getElementById(links[6]).style.backgroundColor = ""
+  document.getElementById(links[6]).style.backgroundImage = "";
+});
 
 // this will update the arrow collor
 document.getElementById("downArrow").addEventListener("mouseover",function() {

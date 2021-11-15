@@ -19,7 +19,7 @@ var curr_gradient = ""
 
 function saveGradient() {
 
-  console.log("saved the gradient" + String(curr_gradient));
+  // console.log("saved the gradient" + String(curr_gradient));
   localStorage.setItem("currentGradient",curr_gradient);
   return true;
 }
@@ -27,17 +27,17 @@ function saveGradient() {
 function loadGradient() {
   // get the current_gradient
   curr_gradient = localStorage.getItem("currentGradient");
-  console.log(curr_gradient);
+  // console.log(curr_gradient);
 
   // if the current gradient is empty set an initial one
   if (curr_gradient == null) {
-    console.log("the curr_gradient is not set");
+    // console.log("the curr_gradient is not set");
     curr_gradient = [180,"#FFFF33","#FF00FF"];
     accent = "#FFFF33";
   } else {
     curr_gradient = curr_gradient.split(",");
   }
-  console.log("loading gradient" + String(curr_gradient));
+  // console.log("loading gradient" + String(curr_gradient));
 
   return curr_gradient
 }

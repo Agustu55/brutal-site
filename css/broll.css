@@ -1,14 +1,67 @@
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1015px) {
 
-  [id^='img'] {
+  .topDivider {
+    height: 125px;
+    width: 100%;
+  }
+
+
+  #text1 {
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 75px;
+
+  }
+  #text1b {
     display: none;
+  }
+
+  #text1a {
+    font-size: 13px;
+    text-align: center;
+    padding: 15px;
+    border-style: dashed;
+    border-width: thin;
+  }
+
+  #set1 img {
+    max-width: 500px;
+    width: 100%;
+    font-size: 0px; /* this removes the space between divs */
+  }
+
+  #set2 img {
+    max-width: 500px;
+    width: 100%;
+    font-size: 0px; /* this removes the space between divs */
+  }
+
+  #set3 img {
+    max-width: 500px;
+    width: 100%;
+    font-size: 0px; /* this removes the space between divs */
+  }
+
+  /* #set3 {
+    display: none;
+  } */
+  #set3 div.two, #set3 div.seven, #set3 div.eight, #set3 div.nine, #set3 div.ten, #set3 div.eleven {
+    display: none;
+  }
+
+  img {
+    margin-left: auto;
+    margin-right: auto;
   }
 
 }
 
+
+
 /* Everything bigger than 600px */
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1015px) {
   /* all texxt was aligned with dimensions 1000 X 900 */
   #canvasWrapper {
     margin: 5% 5% 5% 5%;
@@ -33,131 +86,391 @@
     font-size: 10px;
   }
 
-  /* top little one left */
-  #img2div {
-    position: absolute;
-    /* right/top is relative to the body */
-    right: 72%;
-    top: 20px;
+  #text1 {
+    font-size: 12px;
+    position:absolute;
+    top: 100px;
+    right: 10%;
   }
-  #img2 {
+  #text1a {
+    font-size: 13px;
+    display: inline-block;
+    padding: 15px;
+    margin-bottom: 10%;
+    border-style: dashed;
+    border-width: thin;
+  }
+
+
+  /* Set 1 css */
+
+  /* top little one left */
+  #set1 div.one {
+    margin-top: -4%;
+    margin-left: 10%;
+  }
+  #set1 div.one img {
     max-width: 350px;
     max-height: 350px;
   }
 
-  #text1 {
-    position:absolute;
-
-    top: 100px;
-    right: 10%;
-  }
-
   /* little one below text */
-  #img4div {
-    position: absolute;
-    top: 400px;
-    margin-left: 50%;
+  #set1 div.two {
+    margin-left: 58%;
+    margin-top: 2%;
   }
-  #img4 {
+  #set1 div.two img {
     max-width: 275px;
     max-height: 275px;
   }
 
   /* big one left left */
-  #img1div {
+  #set1 div.three {
     display: flex;
     align-items: center;
-    margin-top: 800px;
+    margin-top: 200px;
   }
-  #img1 {
+  #set1 div.three img {
     float:left;
     height: 500px;
   }
 
-  /* image 3 displayed to right on laregr displays */
-  @media only screen and (min-width: 1450px) {
-    /* horizontal */
-    /* bottom right */
-    #img3div {
-      float: right;
-      position: relative;
-      margin-top: -100px;
-    }
-    #img3 {
-      max-width: 450px;
-      max-height: 450px;
-    }
+  /* horizontal */
+  /* bottom right */
+  #set1 div.four {
+    float: right;
+    position: relative;
+    margin-top: 150px;
+    margin-bottom: 50px;
   }
-
-  /* image 3 only shows on laregr displays */
-  @media only screen and (max-width: 1450px) {
-    /* horizontal */
-    /* bottom right */
-    #img3div {
-      position: relative;
-      float: right;
-      margin-top: 50px;
-    }
-    #img3 {
-      max-width: 200px;
-      max-height: 200px;
-    }
+  #set1 div.four img {
+    max-width: 400px;
+    max-height: 400px;
   }
 
   /* horizontal */
   /* riht full */
-  #img5div {
+  #set1 div.five {
     position: relative;
-    margin-top: 20%;
+    margin-top: 25%;
   }
-  #img5 {
+  #set1 div.five img {
     max-width: 754px;
     max-height: 754px;
   }
 
-  #img6div {
+  #set1 div.six {
     position: relative;
     margin-left: 70%;
     margin-top: -20%;
   }
-  #img6 {
-    max-width: 300px;
-    max-height: 300px;
+  #set1 div.six img {
+    max-width: 350px;
+    max-height: 350px;
   }
 
-  #img7div {
+  #set1 div.seven {
     position: relative;
     float: right;
     margin-top: 220px;
   }
-  #img7 {
+  #set1 div.seven img {
     max-width: 754px;
     max-height: 754px;
   }
 
-  #img8div {
+  #set1 div.eight {
     position: relative;
     margin-top: 800px;
   }
-  #img8 {
-    max-width: 200px;
-    max-height: 200px;
+  #set1 div.eight img {
+    max-width: 300px;
+    max-height: 300px;
   }
 
-  #img9div {
+  #set1 div.nine {
+    float:right;
+    position: relative;
+    margin-top: -20px;
+  }
+  #set1 div.nine img {
+    max-width: 300px;
+    max-height: 300px;
+  }
+
+  #set1 div.ten {
     margin-top: 10%;
   }
 
-  #img10div {
+  #set1 div.eleven {
     position: relative;
     float: right;
     margin-top: 10%;
-    padding-bottom: 800px;
+    /* padding-bottom: 800px; */
+  }
+  #set1 div.eleven img {
+    max-width: 450px;
+    max-height: 450px;
   }
 
-  #img10 {
-    max-width: 200px;
-    max-height: 200px;
+
+
+
+
+
+
+
+
+
+  /* set 2 css */
+
+  #set2 {
+    /* display: none; */
+    margin-top: 350px;
   }
+  /* top little one left */
+  #set2 div.one {
+    margin-top: -4%;
+    margin-left: 10%;
+  }
+  #set2 div.one img {
+    max-width: 350px;
+    max-height: 350px;
+  }
+
+  /* little one below text */
+  #set2 div.two {
+    display: none;
+    margin-left: 58%;
+    margin-top: 2%;
+  }
+  #set2 div.two img {
+    max-width: 275px;
+    max-height: 275px;
+  }
+
+  /* big one left left */
+  #set2 div.three {
+    display: flex;
+    align-items: center;
+    margin-top: 200px;
+  }
+  #set2 div.three img {
+    float:left;
+    height: 500px;
+  }
+
+  /* horizontal */
+  /* bottom right */
+  #set2 div.four {
+    float: right;
+    position: relative;
+    margin-top: 150px;
+    margin-bottom: 50px;
+  }
+  #set2 div.four img {
+    max-width: 400px;
+    max-height: 400px;
+  }
+
+  /* horizontal */
+  /* riht full */
+  #set2 div.five {
+    position: relative;
+    margin-top: 25%;
+  }
+  #set2 div.five img {
+    max-width: 754px;
+    max-height: 754px;
+  }
+
+  #set2 div.six {
+    position: relative;
+    margin-left: 70%;
+    margin-top: -20%;
+  }
+  #set2 div.six img {
+    max-width: 350px;
+    max-height: 350px;
+  }
+
+  #set2 div.seven {
+    position: relative;
+    float: right;
+    margin-top: 220px;
+  }
+  #set2 div.seven img {
+    max-width: 754px;
+    max-height: 754px;
+  }
+
+  #set2 div.eight {
+    position: relative;
+    margin-top: 800px;
+  }
+  #set2 div.eight img {
+    max-width: 300px;
+    max-height: 300px;
+  }
+
+  #set2 div.nine {
+    float:right;
+    position: relative;
+    margin-top: -20px;
+  }
+  #set2 div.nine img {
+    max-width: 300px;
+    max-height: 300px;
+  }
+
+  #set2 div.ten {
+    margin-top: 10%;
+  }
+
+  #set2 div.eleven {
+    position: relative;
+    float: right;
+    margin-top: 10%;
+    /* padding-bottom: 800px; */
+  }
+  #set2 div.eleven img {
+    max-width: 450px;
+    max-height: 450px;
+  }
+
+
+
+
+
+
+
+  /* Set 3 css */
+
+  #set3 {
+    /* display: none; */
+    margin-top: 350px;
+  }
+
+  /* top little one left */
+  #set3 div.one {
+    margin-top: -4%;
+    margin-left: 10%;
+  }
+  #set3 div.one img {
+    max-width: 350px;
+    max-height: 350px;
+  }
+
+  /* little one below text */
+  #set3 div.two {
+    display: none;
+    margin-left: 58%;
+    margin-top: 2%;
+  }
+  #set3 div.two img {
+    max-width: 275px;
+    max-height: 275px;
+  }
+
+  /* big one left left */
+  #set3 div.three {
+    display: flex;
+    align-items: center;
+    margin-top: 200px;
+  }
+  #set3 div.three img {
+    float:left;
+    height: 500px;
+  }
+
+  /* horizontal */
+  /* bottom right */
+  #set3 div.four {
+    float: right;
+    position: relative;
+    margin-top: 150px;
+    margin-bottom: 50px;
+  }
+  #set3 div.four img {
+    max-width: 400px;
+    max-height: 400px;
+  }
+
+  /* horizontal */
+  /* riht full */
+  #set3 div.five {
+    position: relative;
+    margin-top: 25%;
+  }
+  #set3 div.five img {
+    max-width: 754px;
+    max-height: 754px;
+  }
+
+  #set3 div.six {
+    position: relative;
+    margin-left: 70%;
+    margin-top: -15%; /* edited from the others */
+  }
+  #set3 div.six img {
+    max-width: 350px;
+    max-height: 350px;
+  }
+
+  #set3 div.seven {
+    display: none;
+    position: relative;
+    float: right;
+    margin-top: 220px;
+  }
+  #set3 div.seven img {
+    max-width: 754px;
+    max-height: 754px;
+  }
+
+  #set3 div.eight {
+    display: none;
+    position: relative;
+    margin-top: 800px;
+  }
+  #set3 div.eight img {
+    max-width: 300px;
+    max-height: 300px;
+  }
+
+  #set3 div.nine {
+    display: none;
+    float:right;
+    position: relative;
+    margin-top: -20px;
+  }
+  #set3 div.nine img {
+    max-width: 300px;
+    max-height: 300px;
+  }
+
+  #set3 div.ten {
+    display: none;
+    margin-top: 10%;
+  }
+
+  #set3 div.eleven {
+    display: none;
+    position: relative;
+    float: right;
+    margin-top: 10%;
+    /* padding-bottom: 800px; */
+  }
+  #set3 div.eleven img {
+    max-width: 450px;
+    max-height: 450px;
+  }
+
+
+  .bottomDivider {
+    height: 125px;
+    width: 100%;
+  }
+
 
 }
