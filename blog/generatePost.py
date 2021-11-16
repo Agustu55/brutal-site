@@ -20,7 +20,7 @@ def generatePost(prevDate, fullf):
 		image = str(soup.find_all("img")[0]).replace("../","")
 
 	postNum = fullf.split(os.path.sep)[-1]
-	thumbnail = '              <!-- edit -->\n' + '              <li>\n' + '                ' + image + '\n' + '                <p class="title"> <a href=posts/' + postNum +'>' + title +'</a></p>\n'  + '                <p class="date">' + date + '</p>\n' + '                <p class="intro">' + '                ' + intro.replace("\n", "") + '</p>\n' + '              </li>\n'
+	thumbnail = '              <!-- edit -->\n' + '              <li>\n' + '                ' + '<a href=posts/' + postNum +'>' + image + '\n' + '                <p class="title"> <a href=posts/' + postNum +'>' + title +'</a></p>\n'  + '                <p class="date">' + date + '</p>\n' + '                <p class="intro">' + '                ' + intro.replace("\n", "") + '</p>\n' + '              </li>\n'
 
 
 	## update main.html
@@ -44,7 +44,6 @@ def generatePost(prevDate, fullf):
 
 	with open("/var/www/gusdstevens.com/blog/archive.html","r") as f:
 		contents = f.readlines()
-	print(contents)
 	# if postDate month is greater than current month I need to make a new month div in the list
 	if (postDate.year >= prevDate.year) and (postDate.month > prevDate.month):
 		print("post month is greater than last month. Creating new month field")
