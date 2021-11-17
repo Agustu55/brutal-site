@@ -19,21 +19,6 @@
   }
 }
 
-.topDivider {
-  height: 35px;
-  width: 100%;
-}
-
-.topDivider h3 {
-    padding: 30px 30px 10px 30px;
-    display: inline-block;
-}
-
-.topDivider h3 {
-    padding: 30px 30px 10px 30px;
-    display: inline-block;
-}
-
 .canvasWrapper {
   margin: 1% 20% 5% 5%;
   max-width: 750px;
@@ -69,15 +54,4 @@ img {
 
 .day {
   font-size: 12px;
-}
-
-.left {
-  float: left;
-}
-.right {
-  float: right;
-}
-.right a {
-  padding-right: 30px;
-  float: right;
 }

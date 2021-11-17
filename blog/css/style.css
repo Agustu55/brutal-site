@@ -48,3 +48,24 @@ a:active, a:focus, a:visited {
   outline: 0;
   border: none;
 }
+
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.right a {
+  padding-right: 30px;
+  float: right;
+}
+
+.topDivider {
+  height: 35px;
+  width: 100%;
+}
+
+.topDivider h3 {
+    padding: 30px 30px 10px 30px;
+    display: inline-block;
+}

@@ -20,7 +20,17 @@ def generatePost(prevDate, fullf):
 		image = str(soup.find_all("img")[0]).replace("../","")
 
 	postNum = fullf.split(os.path.sep)[-1]
-	thumbnail = '              <!-- edit -->\n' + '              <li>\n' + '                ' + '<a href=posts/' + postNum +'>' + image + '\n' + '                <p class="title"> <a href=posts/' + postNum +'>' + title +'</a></p>\n'  + '                <p class="date">' + date + '</p>\n' + '                <p class="intro">' + '                ' + intro.replace("\n", "") + '</p>\n' + '              </li>\n'
+	thumbnail  = '              <!-- edit -->\n'
+	thumbnail += '              <li>\n' + '                '
+	thumbnail += '<a href=posts/' + postNum +'>' + image + '</a>\n'
+	thumbnail += '                <p class="title"> <a href=posts/'
+	thumbnail += postNum +'>' + title +'</a></p>\n'
+	thumbnail += '                <p class="date">'
+	thumbnail += date + '</p>\n'
+	thumbnail += '                <p class="intro">'
+	thumbnail += '                ' + intro.replace("\n", "")
+	thumbnail += '</p>\n'
+	thumbnail += '              </li>\n'
 
 
 	## update main.html
@@ -48,11 +58,22 @@ def generatePost(prevDate, fullf):
 	if (postDate.year >= prevDate.year) and (postDate.month > prevDate.month):
 		print("post month is greater than last month. Creating new month field")
 		index = contents.index("          <!-- month edit -->\n")
-		archiveText = '          <!-- month edit -->\n' + '          <p class="month">' + calendar.month_name[postDate.month].upper() +' '+ str(postDate.year) + '</p>\n' + '            <ul>\n' + '              <!-- day edit -->\n' + '              <li>\n' + '                <p class="day">' + str(postDate.day) + ' - <a href=posts/' + postNum +'>' + title +'</a></p>\n' + '              </li>\n' + '            </ul>\n'
+		archiveText  = '          <!-- month edit -->\n'
+		archiveText += '          <p class="month">' + calendar.month_name[postDate.month].upper() +' '+ str(postDate.year) + '</p>\n'
+		archiveText += '            <ul>\n'
+		archiveText += '              <!-- day edit -->\n'
+		archiveText += '              <li>\n'
+		archiveText += '                <a href=posts/' + postNum +'>' + image + '</a>\n'
+		archiveText += '                <p class="day">' + str(postDate.day) + ' - <a href=posts/' + postNum +'>' + title +'</a></p>\n'
+		archiveText += '              </li>\n' + '            </ul>\n'
 	else:
 		print("in the same month as last one")
 		index = contents.index("              <!-- day edit -->\n")
-		archiveText = '              <!-- day edit -->\n' + '              <li>\n' + '                <p class="day">' + str(postDate.day) + ' - <a href=posts/' + postNum +'>' + title +'</a></p>\n' + '              </li>\n'
+		archiveText = '              <!-- day edit -->\n'
+		archiveText += '              <li>\n'
+		archiveText += '                <a href=posts/' + postNum +'>' + image + '</a>\n'
+		archiveText += '                <p class="day">' + str(postDate.day) + ' - <a href=posts/' + postNum +'>' + title +'</a></p>\n'
+		archiveText += '              </li>\n'
 
 	contents[index] = archiveText
 
@@ -61,4 +82,5 @@ def generatePost(prevDate, fullf):
 	    f.write(contents)
 
 	print("wrote archive text")
+	print("post date: ", postDate)
 	return postDate
