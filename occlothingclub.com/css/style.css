@@ -1,0 +1,146 @@
+html, body, h1, h2, h3, h4, ul, ol, li, p, a {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  background-color: none;
+}
+.header {
+  display: flex;
+  width: 100%;
+  height: 2.75rem;
+  border-bottom: 1px solid black;
+  align-items: center;
+}
+
+.header a {
+  display: block;
+  height: 100%;
+  width: 150px;
+  background-color: transparent;
+}
+
+.header a h2 {
+  font-size: 16px;
+  padding-top: .9375rem;
+  padding-left: .625rem;
+}
+
+.header .search {
+  padding-top: .625rem;
+  cursor: pointer;
+  margin-left: auto;
+  padding-right: 1rem;
+}
+
+.connect-wallet-button {
+  border: 0;
+  background: black;
+  font-size: 12px;
+  color: #fff;
+  border-radius: .2rem;
+  height: 25px;
+  width: 100px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.connect-wallet {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.status {
+  display: flex;
+  height: 1rem;
+  width: 100%;
+  border-bottom: 1px solid black;
+  overflow: hidden;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.available {
+  width: 50%;
+  min-width: 15vw;
+  /* background-color: red; */
+}
+
+.available-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.available-cell {
+  height: 150px;
+  width: 150px;
+  background-color: red;
+  border: solid;
+  border-width: 1px;
+  flex: 0 15vw;
+  height: 15vw;
+  margin-left: .4rem;
+  margin-top: .4rem;
+}
+
+.divider {
+  background-color: #fff;
+  cursor: col-resize;
+  height: 100%;
+  width: 1px;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.divider-line {
+  background-color: #000;
+  cursor: col-resize;
+  height: 100%;
+  width: 1px;
+}
+
+.collected {
+  flex: 1;  /* Take the remaining width */
+  min-width: 15vw;
+}
+
+.collected-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: right;
+  justify-content: flex-end;
+}
+
+.collected-cell {
+  height: 150px;
+  width: 150px;
+  background-color: grey;
+  border: solid;
+  border-width: 1px;
+  flex: 0 15vw;
+  height: 15vw;
+  margin-right: .4rem;
+  margin-top: .4rem;
+}
+
+
+body {
+    font-family: UniversLTCYRW05-55Roman,Helvetica Neue,Arial,sans-serif;
+    font-size: 16px;
+    color: #000;
+}

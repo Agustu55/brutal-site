@@ -1,0 +1,107 @@
+
+#comments {
+  background: #fff;
+	margin-bottom: 2em;
+	overflow: hidden;
+	border-radius: 10px;
+}
+
+#commentTitle {
+  padding-top: 0px;
+  padding-bottom: 10px;
+  font-size: 16px;
+  color: black;
+}
+
+#posts-list {
+  padding-top: 18px;
+}
+
+.entry-content {
+font-size: 12px;
+}
+
+.vcard-author {
+  font-size: 12px;
+  color: gray;
+}
+
+#no-comments {
+  font-size: 12px;
+}
+
+#comments p {
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+#comments label {
+  display: block;
+  font-size: 12px;
+}
+
+#comments label:after {
+  content:" *";
+}
+
+#comments ol li:nth-child(even) {
+  background-color: #F5F4EF;
+}
+
+#commentform {
+  padding-top: 18px;
+}
+
+#respond {
+  margin-top: 40px;
+}
+
+#respond input:focus, textarea:focus {
+  outline: none;
+}
+
+#respond input[type='submit'] {
+  letter-spacing: 2px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+  margin-top: 18px;
+}
+
+#respond input[type='submit']:hover {
+  background-color: #F5F4EF;
+  background: #F5F4EF;
+  cursor: pointer;
+}
+
+#respond input[type='text'],
+#respond input[type='email'],
+#respond textarea {
+  margin-bottom: 10px;
+  display: block;
+  width: 100%;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+
+  line-height: 1.4em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-size: 12px;
+}
+
+#posts-list.has-comments li.no-comments {
+  display: none;
+}

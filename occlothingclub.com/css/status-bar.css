@@ -1,0 +1,28 @@
+
+/* (A) FIXED WRAPPER */
+.hwrap {
+  overflow: hidden; /* HIDE SCROLL BAR */
+  background: #fff;
+}
+
+/* (B) MOVING TICKER WRAPPER */
+.hmove { display: flex; }
+
+/* (C) ITEMS - INTO A LONG HORIZONTAL ROW */
+.hitem {
+  font-size: 12px;
+  flex-shrink: 0;
+  width: 50%;
+  box-sizing: border-box;
+  text-align: center;
+  padding-left: 10px;
+}
+
+/* (D) ANIMATION - MOVE ITEMS FROM RIGHT TO LEFT */
+/* 4 ITEMS -400%, CHANGE THIS IF YOU ADD/REMOVE ITEMS */
+@keyframes tickerh {
+  0% { transform: translate3d(100%, 0, 0); }
+  100% { transform: translate3d(-400%, 0, 0); }
+}
+/* .hmove { animation: tickerh linear 30s infinite; } */
+.hmove:hover { animation-play-state: paused; }
