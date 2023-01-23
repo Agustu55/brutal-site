@@ -112,8 +112,18 @@ a:hover {
   max-width: 200px;
 }
 
+.horizontalPic_horizontal {
+  flex: 33.33%;
+  padding: 5px;
+  max-width: 450px;
+}
+
 .doubleHorizontalPic {
   flex: 50%;
   padding: 5px;
   max-width: 350px;
+}
+
+a {
+  font-weight:bold
 }

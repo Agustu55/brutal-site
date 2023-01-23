@@ -24,7 +24,7 @@ function createCookie(name, value, days) {
 
 <?php
 require('../php/db_comments.php');
-$comment_post_id = 0;
+$comment_post_id = 1;
 $db = new CommentsDB();
 $comments = $db->get_comments($comment_post_id);
 $has_comments = (count($comments) > 0);

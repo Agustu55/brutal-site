@@ -102,10 +102,12 @@ function get_exact_comment($comment_id) {
 
 
     // need to validate the input. if it is true then can proceed to input it to db
-    if ( $this->validate_input($email, $author, $comment) ) {
+    if ($this->validate_input($email, $author, $comment, $comment_post_id)) { //if the input is valid then continue
       $sql = "INSERT INTO comments (post_id, reply, parent_comment_id, email, author, comment_text) VALUES (?, ?, ?, ?, ?, ?)";
       $stmt = $this->db->prepare($sql);
       $stmt->bind_param("iiisss", $comment_post_id, $reply, $parent_comment_id, $email, $author, $comment);
+      // $stmt->bind_param("iiisss", $input['comment_post_id'], $reply, $parent_comment_id, $input['email'], $input['author'], $input['comment']); // this is with the validated inputs from the input array
+
       if ( $stmt->execute() ) {
         // this means the query executed so get the last inserted id
         error_log("sql executed succesfully");
@@ -129,36 +131,41 @@ function get_exact_comment($comment_id) {
     $stmt->execute;
   }
 
+  private function check_string($variable) {
+    error_log("doing the string sanitization");
+    return filter_var(mysqli_real_escape_string($this->db,$variable), FILTER_SANITIZE_STRING);
+  }
 
-  /**
-   * TODO: much more validation and sanitization. Use a library.
-   */
-  private function validate_input($email, $author, $comment) {
-    // TODO: need to uncomment this stuff to validate input. Right now it just returns true
-    // $input['email'] = filter_var($input['email'], FILTER_SANITIZE_EMAIL);
-    // if (filter_var($input['email'], FILTER_VALIDATE_EMAIL) == false) {
-    //   return false;
-    // }
-    //
-    // $input['comment_author'] = substr($input['comment_author'], 0, 70);
-    // if($this->check_string($input['comment_author']) == false) {
-    //   return false;
-    // }
-    // $input['comment_author'] = htmlentities($input['comment_author']);
-    //
-    // $input['comment'] = substr($input['comment'], 0, 300);
-    // if($this->check_string($input['comment'], 5) == false) {
-    //   return false;
-    // }
-    // $input['comment'] = htmlentities($input['comment']);
-    //
-    // $input['comment_post_id'] = filter_var($input['comment_post_id'], FILTER_VALIDATE_INT);
-    // if (filter_var($input['comment_post_id'], FILTER_VALIDATE_INT) == false) {
-    //   return false;
-    // }
+  private function validate_input($email, $author, $comment, $comment_post_id) {
 
+    $validated_input['email'] = filter_var($email, FILTER_SANITIZE_EMAIL);
+    if (filter_var($validated_input['email'], FILTER_VALIDATE_EMAIL) == false) {
+      error_log("failed email validation");
+      return false;
+    }
+
+    $validated_input['author'] = substr($author, 0, 70);
+    if($this->check_string($validated_input['author']) == false) {
+      error_log("failed author validation");
+      return false;
+    }
+    $validated_input['author'] = htmlentities($validated_input['author']);
+
+    $validated_input['comment'] = substr($comment, 0, 300);
+    if($this->check_string($validated_input['comment'], 5) == false) {
+      error_log("failed comment validation");
+      return false;
+    }
+    $validated_input['comment'] = htmlentities($validated_input['comment']);
+
+    $validated_input['comment_post_id'] = intval($comment_post_id);
+    if (filter_var($validated_input['comment_post_id'], FILTER_VALIDATE_INT) == false) {
+      error_log("failed post ID validation");
+      return false;
+    }
     return true;
   }
+
 }
 
 ?>
