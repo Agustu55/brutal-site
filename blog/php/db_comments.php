@@ -35,7 +35,7 @@ class CommentsDB {
     $tz = $_COOKIE["tz"]; // get the timezone from the clients cookies which is saved as "tz" then use it to convert the timestamp from the db using convert_tz
     error_log($tz);
 
-    $sql = "SELECT email, author, comment_text, DATE_FORMAT(convert_tz(date, 'Etc/UTC', ?), '%W %M %Y') as date, DATE_FORMAT(convert_tz(date, 'Etc/UTC', ?), '%l:%i %p') as time FROM comments WHERE post_id=?"; // SQL with parameters
+    $sql = "SELECT post_id, comment_id, parent_comment_id, email, author, comment_text, DATE_FORMAT(convert_tz(date, 'Etc/UTC', ?), '%W %M %Y') as date, DATE_FORMAT(convert_tz(date, 'Etc/UTC', ?), '%l:%i %p') as time FROM comments WHERE post_id=?"; // SQL with parameters
     $stmt = $this->db->prepare($sql);
     $stmt->bind_param("ssi", $tz,$tz,$comment_post_id);
     $stmt->execute();
@@ -55,7 +55,7 @@ function get_exact_comment($comment_id) {
   $tz = $_COOKIE["tz"]; // get the timezone from the clients cookies which is saved as "tz" then use it to convert the timestamp from the db using convert_tz
   error_log($tz);
 
-  $sql = "SELECT email, author, comment_text, DATE_FORMAT(convert_tz(date, 'Etc/UTC', ?), '%W %M %Y') as date, DATE_FORMAT(convert_tz(date, 'Etc/UTC', ?), '%l:%i %p') as time FROM comments WHERE comment_id=?"; // SQL with parameters
+  $sql = "SELECT post_id, comment_id, parent_comment_id, email, author, comment_text, DATE_FORMAT(convert_tz(date, 'Etc/UTC', ?), '%W %M %Y') as date, DATE_FORMAT(convert_tz(date, 'Etc/UTC', ?), '%l:%i %p') as time FROM comments WHERE comment_id=?"; // SQL with parameters
   $stmt = $this->db->prepare($sql);
   $stmt->bind_param("ssi", $tz,$tz,$comment_id);
   $stmt->execute();
@@ -68,7 +68,6 @@ function get_exact_comment($comment_id) {
 
   /**
    * Get all comments.
-   * there is really no reason for this..
    */
   function get_all_comments() {
     $comments = array();
@@ -95,17 +94,21 @@ function get_exact_comment($comment_id) {
     $email = $vars['email'];
     $author = $vars['author'];
     $comment = $vars['comment'];
+    $parent_comment_id=$vars['parent_comment_id'];
 
-    //for testing just hardcode that it is not a reply
-    $reply=0;
-    $parent_comment_id=NULL;
-
+    // if the comment post has a parent comment id greater than 0 this means it is a reply. Must then set reply variable to 1 else it is 0.
+    if ($parent_comment_id > 0) {
+      $reply = 1;
+    } else {
+      $reply = 0;
+    }
 
     // need to validate the input. if it is true then can proceed to input it to db
-    if ($this->validate_input($email, $author, $comment, $comment_post_id)) { //if the input is valid then continue
+    $valid_input = $this->validate_input($email, $author, $comment, $comment_post_id);
+    if ($valid_input != false) { //if the input is valid then continue
       $sql = "INSERT INTO comments (post_id, reply, parent_comment_id, email, author, comment_text) VALUES (?, ?, ?, ?, ?, ?)";
       $stmt = $this->db->prepare($sql);
-      $stmt->bind_param("iiisss", $comment_post_id, $reply, $parent_comment_id, $email, $author, $comment);
+      $stmt->bind_param("iiisss", $valid_input['comment_post_id'], $reply, $parent_comment_id, $valid_input['email'], $valid_input['author'], $valid_input['comment']);
       // $stmt->bind_param("iiisss", $input['comment_post_id'], $reply, $parent_comment_id, $input['email'], $input['author'], $input['comment']); // this is with the validated inputs from the input array
 
       if ( $stmt->execute() ) {
@@ -163,7 +166,7 @@ function get_exact_comment($comment_id) {
       error_log("failed post ID validation");
       return false;
     }
-    return true;
+    return $validated_input;
   }
 
 }

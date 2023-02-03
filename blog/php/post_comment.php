@@ -9,6 +9,8 @@ require('pusher_config.php');
 // }
 
 $ajax = ($_SERVER[ 'HTTP_X_REQUESTED_WITH' ] === 'XMLHttpRequest');
+error_log("posting a comment or reply ");
+error_log(implode(" ",$_POST));
 
 $db = new CommentsDB(); // if this is the persistence it is the old method. if it is CommentsDB then it is the new method (with the db)
 $added = $db->add_comment($_POST);

@@ -104,28 +104,54 @@ var APP_CLUSTER = '<?php echo(APP_CLUSTER); ?>';
 
     <h3 id="commentTitle">COMMENTS</h3>
 
-
     <ol id="posts-list" class="hfeed<?php echo($has_comments?' has-comments':'’'); ?>">
 
     <li class="no-comments">Be the first to add a comment.</li>
 
+    <div id="has-coments">
     <?php
       for ($i = 0; $i < count($comments); $i++) {
       ?>
 
-      <li>
+      <li id="comment-<?php echo($comments[$i]['comment_id']); ?>">
+        <!-- $comments is an array of all the comments. $i is the iterator of the for loop. We can use it to get the comment attributes (author date etc). The article id matches the comment id from the comments database. -->
         <article class="hentry">
           <div class="entry-content">
             <p><?php echo($comments[$i]['comment_text']); ?></p>
           </div>
+          <input id="reply-button-post-<?php echo($comment_post_id); ?>-comment-<?php echo($comments[$i]['comment_id']); ?>" class="reply" name="reply" type="submit" value="reply" onclick="ShowAndHide(this.id)" />
           <address class ="vcard-author">
             <p> comment by <?php echo($comments[$i]['author']); ?> on <?php echo($comments[$i]['date']); ?> at <?php echo($comments[$i]['time']); ?></p>
           </address>
+          <!-- the hidden reply fields will be here. If the user selects the reply button they will be revealed -->
+          <div class="reply-div" id="reply-div-post-<?php echo($comment_post_id); ?>-comment-<?php echo($comments[$i]['comment_id']); ?>">
+            <form class="reply-form" action="../php/post_comment.php" method="post" id="reply-form-post-<?php echo($comment_post_id); ?>-comment-<?php echo($comments[$i]['comment_id']); ?>">
+
+              <label for="reply_author" class="required">Your name</label>
+              <input type="text" name="reply_author" value="" tabindex="1" required="required">
+
+              <label for="reply_email" class="required">Your email</label>
+              <input type="email" name="reply_email" value="" tabindex="2" required="required">
+              <label for="reply" class="required">Your message</label>
+              <textarea name="reply" rows="3" tabindex="4"  required="required"></textarea>
+
+              <input type="hidden" name="reply_post_id" value="<?php echo($comment_post_id); ?>" />
+              <input type="hidden" name="parent_comment_id" value="<?php echo($comments[$i]['comment_id']); ?>" />
+
+              <!-- when the submit reply button is pressed it will trigger the handle reply funciton and it passes in the parent comment ID. -->
+              <!-- todo: put this in the post comment java script section.. might be hard since there are lots of quotes -->
+              <input name="reply_submit" type="submit" value="Submit reply"/>
+
+            </form>
+          </div>
         </article>
+        <!-- at the end of the first comment article there will be one more ol that is for replies -->
+        <ol id="reply-list-comment-<?php echo($comments[$i]['comment_id']); ?>"></ol>
       </li>
         <?php
       }
     ?>
+  </div>
 
     </ol>
 
@@ -136,15 +162,16 @@ var APP_CLUSTER = '<?php echo(APP_CLUSTER); ?>';
       <form action="../php/post_comment.php" method="post" id="commentform">
 
         <label for="comment_author" class="required">Your name</label>
-        <input type="text" name="comment_author" id="comment_author" value="" tabindex="1" required="required">
+        <input type="text" name="comment_author" id="comment_author" value="" tabindex="4" required="required">
 
         <label for="email" class="required">Your email</label>
-        <input type="email" name="email" id="email" value="" tabindex="2" required="required">
+        <input type="email" name="email" id="email" value="" tabindex="5" required="required">
         <label for="comment" class="required">Your message</label>
-        <textarea name="comment" id="comment" rows="3" tabindex="4"  required="required"></textarea>
+        <textarea name="comment" id="comment" rows="3" tabindex="7"  required="required"></textarea>
 
         <input type="hidden" name="comment_post_id" value="<?php echo($comment_post_id); ?>" id="comment_post_id" />
-        <input name="submit" type="submit" value="Submit comment" />
+
+        <input name="submit" type="submit" value="Submit comment"/>
 
       </form>
 

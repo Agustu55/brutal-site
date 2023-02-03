@@ -19,6 +19,7 @@
 
 .entry-content {
 font-size: 12px;
+padding-right: 100px;
 }
 
 .vcard-author {
@@ -103,5 +104,27 @@ font-size: 12px;
 }
 
 #posts-list.has-comments li.no-comments {
+  display: none;
+}
+
+
+/* below is CSS for the reply button and form */
+.reply {
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  background: none;
+  border: none;
+  text-decoration: underline;
+  float: right;
+}
+
+.reply:hover {
+  cursor: pointer;
+}
+
+/* hides the reply form initially */
+[id^="reply-div-post"] {
   display: none;
 }
