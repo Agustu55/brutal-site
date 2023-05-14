@@ -27,6 +27,7 @@ require('../php/db_comments.php');
 $comment_post_id = 1;
 $db = new CommentsDB();
 $comments = $db->get_comments($comment_post_id);
+$replies = $db->get_replies($comment_post_id);
 $has_comments = (count($comments) > 0);
 ?>
 
@@ -109,12 +110,12 @@ var APP_CLUSTER = '<?php echo(APP_CLUSTER); ?>';
     <li class="no-comments">Be the first to add a comment.</li>
 
     <div id="has-coments">
+      <!-- this loads ONLy the comments. Need to load the replies later -->
     <?php
       for ($i = 0; $i < count($comments); $i++) {
       ?>
-
+      <!-- $comments is an array of all the comments. $i is the iterator of the for loop. We can use it to get the comment attributes (author date etc). The article id matches the comment id from the comments database. -->
       <li id="comment-<?php echo($comments[$i]['comment_id']); ?>">
-        <!-- $comments is an array of all the comments. $i is the iterator of the for loop. We can use it to get the comment attributes (author date etc). The article id matches the comment id from the comments database. -->
         <article class="hentry">
           <div class="entry-content">
             <p><?php echo($comments[$i]['comment_text']); ?></p>
@@ -152,6 +153,25 @@ var APP_CLUSTER = '<?php echo(APP_CLUSTER); ?>';
       }
     ?>
   </div>
+    <!-- after loading the comments we can load the resplies with javascript -->
+    <?php
+      for ($j = 0; $j < count($replies); $j++) {
+      ?>
+      <!-- need to give (post_id, comment_id, parent_comment_id, email, author, comment_text, date, time) for javascript -->
+    <script type="text/javascript" language="JavaScript">
+        loadReply('<?php echo($comment_post_id); ?>',
+        '<?php echo($replies[$j]['comment_id']); ?>',
+        '<?php echo($replies[$j]['parent_comment_id']); ?>',
+        '<?php echo($replies[$j]['email']); ?>',
+        '<?php echo($replies[$j]['author']); ?>',
+        '<?php echo($replies[$j]['comment_text']); ?>',
+        '<?php echo($replies[$j]['date']); ?>',
+        '<?php echo($replies[$j]['time']); ?>',
+      );
+     </script>
+    <?php
+    }
+    ?>
 
     </ol>
 

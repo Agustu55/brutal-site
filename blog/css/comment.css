@@ -125,6 +125,6 @@ padding-right: 100px;
 }
 
 /* hides the reply form initially */
-[id^="reply-div-post"] {
+[id^="reply-form-post"] {
   display: none;
 }

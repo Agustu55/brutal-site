@@ -27,6 +27,7 @@ class CommentsDB {
 
   /**
    * Get all comments for the given post.
+   * this will NOT include the replies
    */
   function get_comments($comment_post_id) {
 
@@ -35,7 +36,27 @@ class CommentsDB {
     $tz = $_COOKIE["tz"]; // get the timezone from the clients cookies which is saved as "tz" then use it to convert the timestamp from the db using convert_tz
     error_log($tz);
 
-    $sql = "SELECT post_id, comment_id, parent_comment_id, email, author, comment_text, DATE_FORMAT(convert_tz(date, 'Etc/UTC', ?), '%W %M %Y') as date, DATE_FORMAT(convert_tz(date, 'Etc/UTC', ?), '%l:%i %p') as time FROM comments WHERE post_id=?"; // SQL with parameters
+    $sql = "SELECT post_id, comment_id, parent_comment_id, email, author, comment_text, DATE_FORMAT(convert_tz(date, 'Etc/UTC', ?), '%W %M %Y') as date, DATE_FORMAT(convert_tz(date, 'Etc/UTC', ?), '%l:%i %p') as time FROM comments WHERE post_id=? AND reply=0"; // SQL with parameters
+    $stmt = $this->db->prepare($sql);
+    $stmt->bind_param("ssi", $tz,$tz,$comment_post_id);
+    $stmt->execute();
+    $result = $stmt->get_result(); // get the mysqli result
+    $comments = mysqli_fetch_all($result, MYSQLI_ASSOC); // this fetches all o fthe data in an array of arrays where the inner array is a row that is the db column_name:value json_encode will return a dictionary
+
+    return $comments;
+  }
+
+  /**
+   * this will get the comment replies ONLY
+   */
+  function get_replies($comment_post_id) {
+
+    error_log("getting comments ");
+
+    $tz = $_COOKIE["tz"]; // get the timezone from the clients cookies which is saved as "tz" then use it to convert the timestamp from the db using convert_tz
+    error_log($tz);
+
+    $sql = "SELECT post_id, comment_id, parent_comment_id, email, author, comment_text, DATE_FORMAT(convert_tz(date, 'Etc/UTC', ?), '%W %M %Y') as date, DATE_FORMAT(convert_tz(date, 'Etc/UTC', ?), '%l:%i %p') as time FROM comments WHERE post_id=? AND reply=1"; // SQL with parameters
     $stmt = $this->db->prepare($sql);
     $stmt->bind_param("ssi", $tz,$tz,$comment_post_id);
     $stmt->execute();

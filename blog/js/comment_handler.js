@@ -39,16 +39,13 @@ function handleSubmit() {
   console.log(data);
 
   postComment(data);
-  // document.getElementById("commentform").submit();
+  document.getElementById("commentform").reset() // this will reset the fields in the form
   return false;
 }
 
 // this is the function for when the submit comment buttons is pressed
 function handleReply() {
   console.log('reply was submitted in the handle reply function');
-
-  // close the reply forms
-  HideAll();
 
   socketId = pusher.connection.socket_id;
 
@@ -65,6 +62,8 @@ function handleReply() {
   console.log(data);
 
   postComment(data);
+  // close the reply forms
+  HideAll();
   return false;
 }
 
@@ -178,14 +177,14 @@ function ShowAndHide(clicked_id) {
 
 
     var reply_button_id = clicked_id;
-    var reply_div_id = clicked_id.replace("button","div") // this is to get the reply form id.
-    var x = document.getElementById(reply_div_id);
+    var reply_form_id = clicked_id.replace("button","form") // this is to get the reply form id.
+    var x = document.getElementById(reply_form_id);
     if (x.style.display == 'block') {
         x.style.display = 'none';
     } else {
 
         // then hide all of the other ones
-        var replyDivs = document.getElementsByClassName("reply-div"),
+        var replyDivs = document.getElementsByClassName("reply-form"),
               len = replyDivs !== null ? replyDivs.length : 0,
               i = 0;
         for(i; i < len; i++) {
@@ -199,10 +198,35 @@ function ShowAndHide(clicked_id) {
 }
 
 function HideAll() {
-  var replyDivs = document.getElementsByClassName("reply-div"),
+  var replyDivs = document.getElementsByClassName("reply-form"),
         len = replyDivs !== null ? replyDivs.length : 0,
         i = 0;
   for(i; i < len; i++) {
     replyDivs[i].style.display = 'none';
+    replyDivs[i].reset() // this will reset the form
   }
+}
+
+
+function loadReply(post_id, comment_id, parent_comment_id, email, author, comment_text, date, time) {
+  console.log('loading comment reply');
+
+  // I need to get the comment data and format it to use the displayComment(data) function
+  // the data for that function needs to be like
+  // {"post_id":1,"comment_id":173,"parent_comment_id":0,"email":"test@test.com","author":"gus","comment_text":"new comment. getting the data format","date":"Friday March 2023","time":"9:21 PM"}
+
+  // using the reply data to create a reply object
+  var reply = new Object();
+  reply.post_id = post_id;
+  reply.comment_id = comment_id;
+  reply.parent_comment_id = parent_comment_id;
+  reply.email = email;
+  reply.author = author;
+  reply.comment_text = comment_text;
+  reply.date = date;
+  reply.time = time;
+
+  var replyString = JSON.stringify(reply);
+
+  displayComment(replyString);
 }
