@@ -32,31 +32,37 @@
   </head>
 
   <body onload="randomGradient();randomImg();">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K9X36MD"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+      <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K9X36MD"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
 
-    <!-- all pics will preload everything in the img and obj directory -->
-    <div id="preload">
-      <?php include 'php/all_pics.php';?>
-    </div>
+      <!-- all pics will preload everything in the img and obj directory -->
+      <div id="preload">
+        <?php include 'php/all_pics.php';?>
+      </div>
 
-    <!-- change the src on clicks -->
-    <img onclick="randomImg();" id="hidden-content" width="100%">
-    <img onclick="randomImg();" id="content" width="100%">
-    <div id="link">
-      <a id="real" href="real.php">ENTER</a>
-    </div>
 
-    <div onclick="randomImg();randomGradient();" class="square" id="square1" width=150px height=150px>
-      <!-- <p id="hexText"></p> -->
-    </div>
+      <!-- change the src on clicks -->
+      <img onclick="randomImg();" id="hidden-content" width="100%">
+      <img onclick="randomImg();" id="content" width="100%">
+      
+      <!-- these are the text prompts -->
+      <div id="click-square">
+        <p>try clicking the square!</p>
+      </div>
+      <div id="link">
+        <a id="real" href="https://www.gusdstevens.com/real">ENTER</a>
+      </div>
 
-    <script type="text/javascript" src="js/gradients.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
+      <div onclick="randomImg();randomGradient();" class="square" id="square1" width=150px height=150px>
+        <!-- <p id="hexText"></p> -->
+      </div>
 
-    <!-- <script type="text/javascript" src="js/index.js"></script> -->
+      <script type="text/javascript" src="js/gradients.js"></script>
+      <script type="text/javascript" src="js/index.js"></script>
+
+      <!-- <script type="text/javascript" src="js/index.js"></script> -->
 
   </body>
 </html>

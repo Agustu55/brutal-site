@@ -385,7 +385,7 @@
     position:absolute;
     transform: translate(-50%, -50%);
 
-    top: 70px;
+    top: 100px;
     left: 15%;
   }
 
@@ -416,8 +416,8 @@
   #img2div {
     position: absolute;
     /* right/top is relative to the body */
-    right: 12%;
-    top: 20px;
+    right: 5%;
+    top: 80px;
   }
   #img2 {
     max-width: 300px;

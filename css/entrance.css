@@ -11,7 +11,7 @@
 		top: 50%;
 		left: 50%;
 		width: 80%;
-    max-height: 557px;
+    	max-height: 557px;
 		/* centers the image horizontaly */
 		transform: translate(-50%, 0%);
 
@@ -32,6 +32,15 @@
 		margin-top: 2%;
 	}
 
+	#click-square {
+
+		position:absolute;
+		top: 150px;
+		left: 50%;
+		width: 210px;
+		margin-left: -105px;
+		background-color: white;
+	}
 
 	#square1 {
 		position: absolute;
@@ -71,22 +80,30 @@
 		margin-top:-400px;
 		text-align:center;
 		width: 50%;
-    width: 500px;
-    max-height: 754px;
+    	width: 500px;
+    	max-height: 754px;
 	}
 
 	#hidden-content {
-	  position: absolute;
-	  top: 50%;
-	  left:50%;
-	  margin-left: -255px;
-	  margin-top: 10px;
-	  text-align:center;
-    width: 50%;
+	  	position: absolute;
+	  	top: 50%;
+	  	left:50%;
+	  	margin-left: -255px;
+	  	margin-top: 10px;
+	  	text-align:center;
+		width: 50%;
 		width: 500px;
-    max-height: 754px;
+    	max-height: 754px;
 	}
 
+	#click-square {
+
+		position:absolute;
+		top: 120px;
+		left: 75vw;
+		width: 150px;
+		background-color: white;
+	}
 
 	#square1 {
 		position: absolute;
@@ -109,8 +126,8 @@
 		top: 92%;
 		left: 50%;
 		text-align:center;
-    background-color: white;
-    /* width: 72px; */
+    	background-color: white;
+    	/* width: 72px; */
 	}
 
   #link:hover {

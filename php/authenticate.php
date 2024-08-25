@@ -4,45 +4,6 @@ function console_log($output) {
 	echo "<script> console.log(" . $js_code . ");</script>";
 }
 
-// todo: this function doesn't work but would be better to have sperate functions
-// function validate_user($firstname, $lastname, $phone) {
-// 	console_log($firstname);
-// 	console_log($lastname);
-// 	console_log($phone);
-//
-// 	$dbhost = 'localhost';
-// 	$dbuser = 'gusdstevens';
-// 	$dbpass = 'web';
-// 	$dbname = 'broll';
-//
-// 	console_log($dbhost);
-// 	consoel_log($dbuser);
-// 	console_log($dbpass);
-// 	consoel_log($dbname);
-// 	console_log("connecting to db");
-// 	// $db = new mysqli($dbhost,$dbuser, $dbpass,$dbname);
-// 	$db = new mysqli('localhost','gusdstevens', 'web','broll');
-//
-//
-//
-// 	if ($db->connect_errno) {
-// 	        consoel_log("Failed to connect to MySQL: (" . $db->connect_erno . ")" . $db->connect_error);
-// 	} else {
-// 		consoel_log("connected to database");
-// 	}
-//
-// 	$sql = "SELECT * FROM users WHERE firstname=? AND lastname=? AND phone=?"; // SQL with parameters
-// 	consoel_log($sql);
-// 	$stmt = $db->prepare($sql);
-// 	$stmt->bind_param("sss", $firstname,$lastname,$phone);
-// 	$stmt->execute();
-// 	$result = $stmt->get_result(); // get the mysqli result
-// 	$user = $result->fetch_assoc(); // fetch data
-// 	consoel_log("returning user from function");
-// 	consoel_log($user);
-// 	return $user;
-// }
-
 console_log("hello");
 $errors = array();
 

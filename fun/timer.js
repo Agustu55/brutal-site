@@ -43,7 +43,7 @@ function countdown(date,day_id,time_id) {
 
 
 
-var ski_count = new Date("Nov 29, 2020 09:00:00").getTime();
+var ski_count = new Date("Dec 14, 2023 23:59:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -79,7 +79,7 @@ var x = setInterval(function() {
 }, 1000);
 
 
-var hike_count = new Date("Nov 23, 2020 14:30:00").getTime();
+var hike_count = new Date("Mar 15, 2024 09:00:00").getTime();
 
 // Update the count down every 1 second
 var y = setInterval(function() {

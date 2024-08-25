@@ -26,6 +26,8 @@
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/real.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+
 
   </head>
   <body onload="setGradient();defaultImg();loadImg();imgDown();imgDown();" onresize="hideExtraLinks();">
@@ -40,6 +42,19 @@
       <?php include 'php/all_pics.php';?>
     </div>
 
+    <nav class="header" id="header">
+      <ul id="header-name">
+        <li><a href="https://www.gusdstevens.com/real">Gus Stevens</a></li>
+      </ul>
+      <div id="header-divider"> </div>
+      <ul id="header-list">
+        <li><a href="https://www.gusdstevens.com/portfolio">Portfolio</a></li>
+        <li><a href="https://www.gusdstevens.com/blog">Blog</a></li>
+        <li><a href="https://www.gusdstevens.com/about">About / Contact</a></li>
+        <li><a target="_blank" href="https://www.instagram.com/gus.stevens/">Instagram</a></li>
+      </ul>
+    </nav>
+
     <div id="canvasWrapper">
       <div id="img1div">
         <img id="img1">
@@ -50,7 +65,7 @@
       </div>
 
       <div id="link1">
-        <h3><a id="home_link" href="index.php">HOME</a></h3>
+        <h3><a id="home_link" href="https://www.gusdstevens.com/portfolio">PORTFOLIO</a></h3>
       </div>
 
       <div id="text2">
@@ -67,7 +82,7 @@
       </div>
 
       <div id="blogLink">
-        <h3><a id="blog_link" href="/blog/main.html">BLOG</a></h3>
+        <h3><a id="blog_link" href="https://www.gusdstevens.com/blog">BLOG</a></h3>
       </div>
 
       <!-- these links are for the mobile website -->
@@ -75,10 +90,10 @@
         <a id="mobile_print_link" href="https://gusdstevens.darkroom.tech/">prints</a>
       </div>
       <div id="link4">
-        <a id="mobile_about_link" href="about.html">about</a>
+        <a id="mobile_about_link" href="https://www.gusdstevens.com/about">about</a>
       </div>
       <div id="link5">
-        <a id="mobile_home_link" href="index.php">home</a>
+        <a id="mobile_home_link" href="https://www.gusdstevens.com/portfolio">portfolio</a>
       </div>
 
       <div class="square" id="square1" onclick="randomImg('img1');"></div>
@@ -108,7 +123,7 @@
         </a>
       </div>
       <div id="mobile_img4div">
-        <a href="about.html">
+        <a href="https://www.gusdstevens.com/about">
           <img id="mobile_img4">
         </a>
       </div>
@@ -119,18 +134,18 @@
       </div>
 
       <div id="mobile_blog_gallery">
-          <a id="mobile_blog_link" href="blog/main.html">blog</a>
-          <a id="mobile_gallery_link" href="gallery.php">gallery</a>
+          <a id="mobile_blog_link" href="https://www.gusdstevens.com/blog">blog</a>
+          <a id="mobile_gallery_link" href="https://www.gusdstevens.com/gallery">gallery</a>
       </div>
 
 
       <div id="link2">
-        <h3><a id="gallery_link" href="gallery.php">GALLERY</a></h3>
+        <h3><a id="gallery_link" href="https://www.gusdstevens.com/gallery">GALLERY</a></h3>
       </div>
 
       <div id="text4">
         <p>if you're hardcore film only</p>
-        <b><a id="analog_link" href="analog.html">CLICK HERE</a></b>
+        <b><a id="analog_link" href="https://www.gusdstevens.com/analog">CLICK HERE</a></b>
         <p>for the
           <br>
           analog website</p>
@@ -195,7 +210,7 @@
             <h3><a id="prints21_link" target="_blank" href="https://gusdstevens.darkroom.tech/">PRINTS</a></h3>
             <h3><a id="prints22_link" target="_blank" href="https://gusdstevens.darkroom.tech/">PRINTS</a></h3>
             <h3><a id="prints23_link" target="_blank" href="https://gusdstevens.darkroom.tech/">PRINTS</a></h3>
-            <h3><a id="prints24_link" href="about.html">ABOUT</a></h3>
+            <h3><a id="prints24_link" href="https://www.gusdstevens.com/about">ABOUT</a></h3>
             <h3><a id="prints25_link" target="_blank" href="https://gusdstevens.darkroom.tech/">PRINTS</a></h3>
             <h3><a id="prints26_link" target="_blank" href="https://gusdstevens.darkroom.tech/">PRINTS</a></h3>
             <h3><a id="prints27_link" target="_blank" href="https://gusdstevens.darkroom.tech/">PRINTS</a></h3>
@@ -442,7 +457,7 @@
           <a href="brollAuth.php">
             <img id="broll_pic">
           </a>
-          <a class="tiny" id="broll" target="_blank" href="brollAuth.php">broll</a>
+          <a class="tiny" id="broll" target="_blank" href="https://www.gusdstevens.com/brollAuth">broll</a>
         </div>
       </div>
 
@@ -468,7 +483,7 @@
           <a class="tiny" id="vsco"  href="https://vsco.co/gus-stevens/gallery">vsco</a>
         </div>
         <div>
-          <a class="tiny" id="broll" href="brollAuth.php">broll</a>
+          <a class="tiny" id="broll" href="https://www.gusdstevens.com/brollAuth">broll</a>
         </div>
 
       </div>
@@ -482,6 +497,7 @@
     <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>
     <script type="text/javascript" src="js/gradients.js"></script>
     <script type="text/javascript" src="js/real.js"></script>
+    <script type="text/javascript" src="js/portfolio.js"></script>
     <script type="text/javascript" src="js/hide.js"></script>
 
     <!-- <script type="text/javascript" src="js/real.js"></script> -->

@@ -109,8 +109,8 @@ var APP_CLUSTER = '<?php echo(APP_CLUSTER); ?>';
 
     <li class="no-comments">Be the first to add a comment.</li>
 
-    <div id="has-coments">
-      <!-- this loads ONLy the comments. Need to load the replies later -->
+    <div id="has-comments">
+      <!-- this loads ONLY the comments. Need to load the replies later -->
     <?php
       for ($i = 0; $i < count($comments); $i++) {
       ?>

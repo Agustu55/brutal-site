@@ -23,6 +23,7 @@
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="../css/style.css">
   <link rel="stylesheet" type="text/css" href="../css/post.css">
+  <link rel="stylesheet" type="text/css" href="../css/email_entry.css">
   <title>MY JOURNEY INTO FILM</title>
 </head>
 
@@ -34,17 +35,25 @@
 
   <div class="topDivider">
     <div class="left">
-    <h3>POST 001</h3>
+      <h3>POST 001</h3>
     </div>
+
     <div class="right">
-    <h3>OTHER PLACES</h3>
-    <br>
-    <a target="_blank" href="https://www.instagram.com/gus.stevens/">instagram</a>
-    <br>
-    <a target="_blank" href="https://www.gusdstevens.com/">website</a>
-    <br>
-    <a href="../archive.html">archive</a>
+      <h3>SIGN UP FOR POST NOTIFICATIONS</h3>
+      <div id="signup_form">
+        <form id="email_form" method="post" name="postnotificationform" action="1.php">
+          <input id="email_field" type="text" name="email" placeholder="enter email" autocomplete="off" value="<?php echo htmlspecialchars($_POST['email']);?>">
+          
+          <div id="submit_btn">
+            <button type="submit" class="btn" name="enter">
+              <p id="blogButton"> SUBMIT </p>
+            </button>
+          </div>
+        </form>
+        <?php include '../php/blog_email.php';?>
+      </div>
     </div>
+
   </div>
 
   <div class="canvasWrapper">
@@ -65,7 +74,7 @@
   <p>
   This blog will focus on my modern film images. The images from an analog renaissance that has caught and convinced me and many other 'film photographers' that the analog vibes are worth $0.70 per frame... but honestly, they kind of are.
   <br><br>
-  I've fallen for it, the incredible 'real' colors, the slow analog process, the physical negatives, and the cool vintage gear are hard to say no to. And to top it off clicking that little button to take a film photograph is addicting. There aren't many things that I can do which will distract me in such a way... an afternoon phot walk is unbelievably peaceful. And on a realistic note, it is the only thing that I have felt passionate enough to blog about.
+  I've fallen for it, the incredible 'real' colors, the slow analog process, the physical negatives, and the cool vintage gear are hard to say no to. And to top it off clicking that little button to take a film photograph is addicting. There aren't many things that I can do which will distract me in such a way... an afternoon photo walk is unbelievably peaceful. And on a realistic note, it is the only thing that I have felt passionate enough to blog about.
   </p>
   <figure>
     <img src="../img/1/img-65.jpg">
@@ -108,7 +117,7 @@
   </figure>
 
   <p>
-    Thanks for Reading!
+    Thanks for reading!
   </p>
 
   <p class="footer" >

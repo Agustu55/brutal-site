@@ -28,11 +28,11 @@
 .post {
   height: 125px;
 }
-ul {
+.canvasWrapper ul {
   list-style: none;
 }
 
-li {
+.canvasWrapper li {
   padding-left: 2px;
   height: 50px;
 }

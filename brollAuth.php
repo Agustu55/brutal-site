@@ -32,7 +32,7 @@
         <p class="mini"> <br>for authentication purposes only
         <br> i promise i won't sell it</p>
         <div id="enter">
-            <button id= type="submit" class="btn"
+            <button type="submit" class="btn"
                         name="enter">
                 <p id="brollButton"> ENTER </p>
             </button>

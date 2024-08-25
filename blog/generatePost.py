@@ -17,13 +17,13 @@ def generatePost(prevDate, fullf):
 		title = str(soup.find("p", class_="title").text)
 		date = str(soup.find("p", class_="date").text)
 		intro = str(soup.find_all("p")[2].text)
-		image = str(soup.find_all("img")[0]).replace("../","")
+		image = str(soup.find_all("img")[0]).replace("../","https://www.gusdstevens.com/blog/")
 
 	postNum = fullf.split(os.path.sep)[-1]
 	thumbnail  = '              <!-- edit -->\n'
 	thumbnail += '              <li>\n' + '                '
-	thumbnail += '<a href=posts/' + postNum +'>' + image + '</a>\n'
-	thumbnail += '                <p class="title"> <a href=posts/'
+	thumbnail += '<a href=https://www.gusdstevens.com/blog/posts/' + postNum +'>' + image + '</a>\n'
+	thumbnail += '                <p class="title"> <a href=https://www.gusdstevens.com/blog/posts/'
 	thumbnail += postNum +'>' + title +'</a></p>\n'
 	thumbnail += '                <p class="date">'
 	thumbnail += date + '</p>\n'
@@ -35,15 +35,15 @@ def generatePost(prevDate, fullf):
 
 	## update main.html
 	# open the main.html file and read to contents variable
-	with open("/var/www/gusdstevens.com/blog/main.html", "r") as f:
+	with open("/var/www/gusdstevens.com/blog.html", "r") as f:
 		contents = f.readlines()
 	index = contents.index("              <!-- edit -->\n")
 	# update the edit value (index) to be the thumbnail value
 	contents[index] = thumbnail
 
-	with open("/var/www/gusdstevens.com/blog/main.html", "w") as f:
-	    contents = "".join(contents)
-	    f.write(contents)
+	with open("/var/www/gusdstevens.com/blog.html", "w") as f:
+		contents = "".join(contents)
+		f.write(contents)
 
 
 	# for the archive we need to figure out the post date
@@ -55,8 +55,19 @@ def generatePost(prevDate, fullf):
 	with open("/var/www/gusdstevens.com/blog/archive.html","r") as f:
 		contents = f.readlines()
 	# if postDate month is greater than current month I need to make a new month div in the list
-	if (postDate.year >= prevDate.year) and (postDate.month > prevDate.month):
-		print("post month is greater than last month. Creating new month field")
+	if (postDate.year == prevDate.year) and (postDate.month > prevDate.month):
+		print("I'm in the same year and the post month is greater than last month. Creating new month field")
+		index = contents.index("          <!-- month edit -->\n")
+		archiveText  = '          <!-- month edit -->\n'
+		archiveText += '          <p class="month">' + calendar.month_name[postDate.month].upper() +' '+ str(postDate.year) + '</p>\n'
+		archiveText += '            <ul>\n'
+		archiveText += '              <!-- day edit -->\n'
+		archiveText += '              <li>\n'
+		archiveText += '                <a href=posts/' + postNum +'>' + image + '</a>\n'
+		archiveText += '                <p class="day">' + str(postDate.day) + ' - <a href=posts/' + postNum +'>' + title +'</a></p>\n'
+		archiveText += '              </li>\n' + '            </ul>\n'
+	elif (postDate.year != prevDate.year):
+		print("I'm in a new year so I need to create a new year and month field")
 		index = contents.index("          <!-- month edit -->\n")
 		archiveText  = '          <!-- month edit -->\n'
 		archiveText += '          <p class="month">' + calendar.month_name[postDate.month].upper() +' '+ str(postDate.year) + '</p>\n'
@@ -67,7 +78,7 @@ def generatePost(prevDate, fullf):
 		archiveText += '                <p class="day">' + str(postDate.day) + ' - <a href=posts/' + postNum +'>' + title +'</a></p>\n'
 		archiveText += '              </li>\n' + '            </ul>\n'
 	else:
-		print("in the same month as last one")
+		print("in the same month and year as the last one")
 		index = contents.index("              <!-- day edit -->\n")
 		archiveText = '              <!-- day edit -->\n'
 		archiveText += '              <li>\n'
@@ -78,8 +89,8 @@ def generatePost(prevDate, fullf):
 	contents[index] = archiveText
 
 	with open("/var/www/gusdstevens.com/blog/archive.html", "w") as f:
-	    contents = "".join(contents)
-	    f.write(contents)
+		contents = "".join(contents)
+		f.write(contents)
 
 	print("wrote archive text")
 	print("post date: ", postDate)

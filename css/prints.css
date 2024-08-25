@@ -1,0 +1,49 @@
+#canvasWrapper {
+  margin: 5% 5% 5% 5%;
+  max-width: 90%;
+}
+
+#text1divcentered {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#text1div {
+  display: inline-block;
+  text-align: left;
+}
+
+.tiny {
+  font-size: 10px;
+}
+
+#img1div {
+  margin: auto;
+  width: 40%;
+  margin-bottom: 20px;
+}
+
+#img1 {
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+#pricingdiv {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#shipping h3,
+#shipping p,
+#tax h3,
+#tax p {
+  display: inline;
+}
+
+#paybuttondiv {
+  text-align: center;
+  margin: auto;
+  width: 40%;
+}

@@ -221,7 +221,8 @@ function loadReply(post_id, comment_id, parent_comment_id, email, author, commen
   reply.comment_id = comment_id;
   reply.parent_comment_id = parent_comment_id;
   reply.email = email;
-  reply.author = author;
+
+  reply.author = author
   reply.comment_text = comment_text;
   reply.date = date;
   reply.time = time;
@@ -229,4 +230,9 @@ function loadReply(post_id, comment_id, parent_comment_id, email, author, commen
   var replyString = JSON.stringify(reply);
 
   displayComment(replyString);
+}
+
+function colorComments() {
+  // this will get all of the comments. Including replies
+  var commentList = document.querySelector('[id^=comment-')
 }

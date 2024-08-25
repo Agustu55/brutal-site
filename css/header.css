@@ -1,0 +1,90 @@
+/* this is for the floating header */
+nav {
+  padding: 0;
+  margin: 0;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  transition: all .5s ease;
+  width: 100%;
+  height: 30px;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+
+section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+}
+
+#header {
+  display: flex;
+  border-style: solid;
+  border-width: 0px 0px 1px 0px;
+  align-items: center;
+  justify-content: space-around;
+  height: 30px;
+  background-color: white;
+  transition: top 0.5s ease;
+  z-index:10;
+}
+
+#header-name {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+  justify-content: space-around;
+  width: 110px;
+  padding-left: 5px;
+}
+
+#header-divider {
+  height: 30px;
+  flex: auto;
+}
+
+#header-list {
+  display: flex;
+  gap: 20px;
+  list-style-type: none;
+  padding: 0;
+  align-items: center;
+  justify-content: space-around;
+  width: 350px;
+  padding-right: 5px;
+
+}
+
+
+li {
+  margin 10px;
+}
+
+#header {
+  font-size: 12px;
+}
+
+#header a {
+  text-decoration: none;
+  color: #000000;
+}
+
+#header a:hover {
+  text-decoration: none;
+  color: #000000;
+}
+
+#header a:visited {
+  color: #000000;
+}
+
+#header a:active, a:focus, a:visited {
+  outline: 0;
+  border: none;
+}

@@ -36,10 +36,10 @@
       <div class="canvasWrapper">
         <div class="topdivider">
           <div class="left">
-          <h3><a id="home" href="real.php">BACK</a></h3>
+          <h3><a id="home" href="https://www.gusdstevens.com/real">BACK</a></h3>
           </div>
           <div class="right">
-          <h3><a id="reset" href="gallery.php">RESET</a></h3>
+          <h3><a id="reset" href="https://www.gusdstevens.com/gallery">RESET</a></h3>
           </div>
         </div>
 
