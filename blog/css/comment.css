@@ -125,6 +125,18 @@ padding-right: 100px;
   display: none;
 }
 
+/* add padding to reply-form to match reply indents */
+[id^="reply-form-post"] {
+  padding-left: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 0px;
+}
+
+/* this is to add a slight indent to the main comment text */
+[id^="comment-"] p {
+  padding-left: 5px;
+}
+
 /* this is for the reply button to look good */
 [id^="reply-form-post"] input[type='submit'] {
   display: block;
@@ -140,4 +152,36 @@ padding-right: 100px;
   -khtml-border-radius: 5px;
   border-radius: 5px;
   margin-top: 18px;
+}
+
+/* this is to indent the replies */
+[id^="reply-list-comment"] p{
+  padding-left: 15px;
+}
+
+
+/* dont want numbers on the list */
+ol li{
+  list-style: none;
+}
+
+/* this is for the show/hide replies button */
+.showHideReplies {
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  background: none;
+  border: none;
+  text-decoration: underline;
+  float: right;
+}
+
+.showHideReplies:hover {
+  cursor: pointer;
+}
+
+/* until there are comments don't show this */
+.showHideReplies {
+  display: none;
 }

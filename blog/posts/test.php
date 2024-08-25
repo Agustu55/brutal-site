@@ -24,7 +24,7 @@ function createCookie(name, value, days) {
 
 <?php
 require('../php/db_comments.php');
-$comment_post_id = 1;
+$comment_post_id = 0;
 $db = new CommentsDB();
 $comments = $db->get_comments($comment_post_id);
 $replies = $db->get_replies($comment_post_id);
@@ -104,56 +104,34 @@ var APP_CLUSTER = '<?php echo(APP_CLUSTER); ?>';
   <section id="comments" class="body">
 
     <h3 id="commentTitle">COMMENTS</h3>
+    <input id="show-hide-replies" name="hide-replies" class="showHideReplies" type="submit" value="collapse replies" onclick="showHideReplies()">
+
 
     <ol id="posts-list" class="hfeed<?php echo($has_comments?' has-comments':'’'); ?>">
 
     <li class="no-comments">Be the first to add a comment.</li>
 
     <div id="has-comments">
-      <!-- this loads ONLY the comments. Need to load the replies later -->
     <?php
       for ($i = 0; $i < count($comments); $i++) {
-      ?>
-      <!-- $comments is an array of all the comments. $i is the iterator of the for loop. We can use it to get the comment attributes (author date etc). The article id matches the comment id from the comments database. -->
-      <li id="comment-<?php echo($comments[$i]['comment_id']); ?>">
-        <article class="hentry">
-          <div class="entry-content">
-            <p><?php echo($comments[$i]['comment_text']); ?></p>
-          </div>
-          <input id="reply-button-post-<?php echo($comment_post_id); ?>-comment-<?php echo($comments[$i]['comment_id']); ?>" class="reply" name="reply" type="submit" value="reply" onclick="ShowAndHide(this.id)" />
-          <address class ="vcard-author">
-            <p> comment by <?php echo($comments[$i]['author']); ?> on <?php echo($comments[$i]['date']); ?> at <?php echo($comments[$i]['time']); ?></p>
-          </address>
-          <!-- the hidden reply fields will be here. If the user selects the reply button they will be revealed -->
-          <div class="reply-div" id="reply-div-post-<?php echo($comment_post_id); ?>-comment-<?php echo($comments[$i]['comment_id']); ?>">
-            <form class="reply-form" action="../php/post_comment.php" method="post" id="reply-form-post-<?php echo($comment_post_id); ?>-comment-<?php echo($comments[$i]['comment_id']); ?>">
-
-              <label for="reply_author" class="required">Your name</label>
-              <input type="text" name="reply_author" value="" tabindex="1" required="required">
-
-              <label for="reply_email" class="required">Your email</label>
-              <input type="email" name="reply_email" value="" tabindex="2" required="required">
-              <label for="reply" class="required">Your message</label>
-              <textarea name="reply" rows="3" tabindex="4"  required="required"></textarea>
-
-              <input type="hidden" name="reply_post_id" value="<?php echo($comment_post_id); ?>" />
-              <input type="hidden" name="parent_comment_id" value="<?php echo($comments[$i]['comment_id']); ?>" />
-
-              <!-- when the submit reply button is pressed it will trigger the handle reply funciton and it passes in the parent comment ID. -->
-              <!-- todo: put this in the post comment java script section.. might be hard since there are lots of quotes -->
-              <input name="reply_submit" type="submit" value="Submit reply"/>
-
-            </form>
-          </div>
-        </article>
-        <!-- at the end of the first comment article there will be one more ol that is for replies -->
-        <ol id="reply-list-comment-<?php echo($comments[$i]['comment_id']); ?>"></ol>
-      </li>
-        <?php
+        ?>
+        <!-- need to give (post_id, comment_id, parent_comment_id, email, author, comment_text, date, time) for javascript -->
+      <script type="text/javascript" language="JavaScript">
+          loadComment('<?php echo($comment_post_id); ?>',
+          '<?php echo($comments[$i]['comment_id']); ?>',
+          '<?php echo($comments[$i]['parent_comment_id']); ?>',
+          '<?php echo($comments[$i]['email']); ?>',
+          '<?php echo($comments[$i]['author']); ?>',
+          '<?php echo($comments[$i]['comment_text']); ?>',
+          '<?php echo($comments[$i]['date']); ?>',
+          '<?php echo($comments[$i]['time']); ?>',
+        );
+       </script>
+      <?php
       }
-    ?>
+      ?>
   </div>
-    <!-- after loading the comments we can load the resplies with javascript -->
+    <!-- after loading the comments we can load the replies with javascript -->
     <?php
       for ($j = 0; $j < count($replies); $j++) {
       ?>
@@ -199,9 +177,11 @@ var APP_CLUSTER = '<?php echo(APP_CLUSTER); ?>';
 
 	</section>
 
+
+
 </div>
 
-  <div class="bottomDivider"></div>
+<div class="bottomDivider"></div>
 
 </body>
 </html>

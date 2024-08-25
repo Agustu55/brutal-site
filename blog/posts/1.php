@@ -1,3 +1,50 @@
+<!-- this is all the script stuff needed for comments -->
+<script>
+const tz = Intl.DateTimeFormat().resolvedOptions().timeZone; // this gets the timezone from the client it is stored as (America/Denver) standard
+// create a cookie after the document is ready
+createCookie("tz",Intl.DateTimeFormat().resolvedOptions().timeZone, "10");
+
+// function to create the createCookie
+// Function to create the cookie
+function createCookie(name, value, days) {
+    var expires;
+
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toGMTString();
+    }
+    else {
+        expires = "";
+    }
+
+    document.cookie = escape(name) + "=" +
+        escape(value) + expires + "; path=/" + "; SameSite=None; Secure";
+}
+</script>
+
+<?php
+require('../php/db_comments.php');
+$comment_post_id = 1;
+$db = new CommentsDB();
+$comments = $db->get_comments($comment_post_id);
+$replies = $db->get_replies($comment_post_id);
+$has_comments = (count($comments) > 0);
+?>
+
+<?php
+require('../php/pusher_config.php');
+?>
+
+<script>
+var APP_KEY = '<?php echo(APP_KEY); ?>';
+var APP_CLUSTER = '<?php echo(APP_CLUSTER); ?>';
+</script>
+<script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="https://js.pusher.com/7.0.3/pusher.min.js"></script>
+<script src="../js/comment_handler.js"></script>
+<!-- end comment scripts -->
+ 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
